@@ -10,9 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_11_132524) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_11_141613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "recipe_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_favourites_on_recipe_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "product_name"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "recipeingredients", force: :cascade do |t|
+    t.string "quantity"
+    t.string "unit"
+    t.bigint "recipe_id", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_recipeingredients_on_product_id"
+    t.index ["recipe_id"], name: "index_recipeingredients_on_recipe_id"
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "recipe_name"
+    t.text "instructions"
+    t.string "prep_time"
+    t.string "cooking_time"
+    t.string "level"
+    t.float "ratings"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +62,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_11_132524) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favourites", "recipes"
+  add_foreign_key "favourites", "users"
+  add_foreign_key "products", "users"
+  add_foreign_key "recipeingredients", "products"
+  add_foreign_key "recipeingredients", "recipes"
 end
