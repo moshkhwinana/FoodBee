@@ -1,21 +1,26 @@
-<div class='container m-4 p-4' data-controller='edit-product'>
+<div class="container m-4 p-4">
   <h2>Products</h2>
 
-  <div class='product-info mt-3' data-edit-product-target='info'>
-    <ul>
+  <div class="products-card mt-3">
+    <ul class="list-group">     <!--grouped appearance to list-->
       <% @products.each do |product| %>
-      <li><%= product.product_name %> <%= link_to 'Edit', edit_product_path(product) %> <%= link_to "Delete", product_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
-          <%= product.description %>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+
+        <div>
+          <div><%= product.product_name %></div>
+          <div class="text-muted"><%= product.description %></div>     <!--gives text lighter shade-->
+        </div>
+
+        <div class="btns">
+          <%= link_to 'Edit', edit_product_path(product) %> <%= link_to "Delete", product_path(product), method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+        </div>
+
+      </li>
       <% end %>
     </ul>
-
-    <%= simple_form_for @product, html: {class: 'd-none', data: {edit_product_target: 'form'}} do |f| %> 
-      <%= f.input :description %>
-      <%= f.button :submit %>
-    <% end %>
   </div>
 
-  <div class='add-product'>
-    <%= link_to 'Add a product', new_product_path %>
+  <div class="card">
+    <%= link_to 'Add a product', new_product_path, class: "btn btn-sm" %>
   </div>
 </div>
