@@ -38,6 +38,6 @@ Recipeingredient.create!(product_id: bell_pepper.id, recipe_id: ratatouille.id, 
 
 puts "Associated products with recipes"
 
-# Favourite.create!(user: user, recipe: guacamole)
+Favourite.create!(user: user, recipe: guacamole)
 
 puts "Favourited a recipe"
