@@ -1,3 +1,4 @@
+
 class RecipeController < ApplicationController
   def index
   end
@@ -6,5 +7,9 @@ class RecipeController < ApplicationController
   end
 
   def generate
+  end
+
+  def create
+    @recipes = Recipe.new(recipe_params)
   end
 end
