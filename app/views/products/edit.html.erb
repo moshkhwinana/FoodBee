@@ -1,0 +1,12 @@
+<div class="container m-4">
+  <h2>Edit product</h2>
+
+  <p><%= form_with model: @product do |f| %></p>
+    <p><%= f.label :product_name %></p>
+    <p><%= f.text_field :product_name %></p>
+    <p><%= f.label :description %></p>
+    <p><%= f.text_field :description%></p>
+    <p><%= f.submit %></p>
+  <p><% end %></p>
+</div>
+<!--could use JS to add the edit form underneath each product instead of redirecting-->
