@@ -1,0 +1,9 @@
+<h2>Recipes</h2>
+<h4>Choose the recipe that you want</h4>
+
+<% @recipes.each do |recipe| %>
+  <div>
+    <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+    <%= button_to 'Favorite', new_favorite_path(recipe) %>
+  </div>
+<% end %>
