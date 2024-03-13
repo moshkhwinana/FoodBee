@@ -1,0 +1,25 @@
+$yellow: #FFF76A;
+
+.container {
+  border: red;
+
+  .list-group-item {
+    border-radius: 20px;
+
+  }
+
+  a {
+    color: grey;
+    text-decoration: none;
+    opacity: 0.7;
+  }
+
+  .btn-product {
+    background-color: #FFF76A;
+  }
+
+}
+
+body.products.index {
+  background-color: rgb(243, 243, 243);
+}
