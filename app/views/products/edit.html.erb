@@ -1,12 +1,14 @@
 <div class="container m-4">
-  <h2>Edit product</h2>
+  <h2 class='text-center'>Edit product</h2>
 
-  <p><%= form_with model: @product do |f| %></p>
-    <p><%= f.label :product_name %></p>
-    <p><%= f.text_field :product_name %></p>
-    <p><%= f.label :description %></p>
-    <p><%= f.text_field :description%></p>
-    <p><%= f.submit %></p>
-  <p><% end %></p>
+  <div class='card-form d-flex justify-content-center'>
+    <p><%= form_with model: @product do |f| %></p>
+      <p><%= f.label :add_a_product_name_pookie %></p>
+      <p><%= f.text_field :product_name %></p>
+      <p><%= f.label :edit_your_description_pookie? %></p>
+      <p><%= f.text_field :description%></p>
+      <p><%= f.submit :updatepooks %></p>
+    <p><% end %></p>
+  </div>
 </div>
 <!--could use JS to add the edit form underneath each product instead of redirecting-->

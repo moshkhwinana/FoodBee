@@ -1,25 +1,36 @@
 $yellow: #FFF76A;
 
 .container {
-  border: red;
-
   .list-group-item {
     border-radius: 20px;
 
   }
 
-  a {
-    color: grey;
-    text-decoration: none;
-    opacity: 0.7;
+  .btns {
+    a {
+      color: grey;
+      text-decoration: none;
+      opacity: 0.7;
+    }
   }
 
   .btn-product {
-    background-color: #FFF76A;
+    a {
+      background-color: #FFF76A;
+      color: black;
+      text-decoration: none;
+      border-radius: 20px;
+      padding: 10px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .name img {
+    border-radius: 100%;
   }
 
 }
 
 body.products.index {
-  background-color: rgb(243, 243, 243);
+  background-color: rgb(231, 231, 231);
 }
