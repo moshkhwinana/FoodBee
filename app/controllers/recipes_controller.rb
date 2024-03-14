@@ -1,17 +1,17 @@
-
-class RecipeController < ApplicationController
+class RecipesController < ApplicationController
   def index
+    @recipes = Recipe.order(created_at: :desc)
   end
 
   def show
     @recipe = Recipe.find(params[:id])
-    ingredients = params[:ingredients]&.split(',')&.map(&:strip) || []
-    generator = RecipeGenerator.new(ingredients)
-    @generated_recipe_content = generator.generate
   end
 
   def generate
-    @titles = RecipeGenerator.new(params[:ingredients]).generate
+    products = Product.all
+    # generates recipes and saves them in DB
+    RecipeGenerator.new(products).generate
+    redirect_to recipes_path
   end
 
   def create

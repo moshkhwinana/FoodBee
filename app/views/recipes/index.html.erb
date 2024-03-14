@@ -1,0 +1,13 @@
+<div class="container my-3">
+  <h1>All Recipes</h1>
+
+  <h2>New AI recipes</h2>
+
+  <p>print new recipes fdrom AI here</p>
+
+  <h2>Past recipes</h2>
+
+  <% @recipes.each do |recipe| %>
+    <p><%= recipe.recipe_name %>, created at: <%= recipe.created_at %></p>
+  <% end %>
+</div>
