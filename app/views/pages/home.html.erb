@@ -2,14 +2,14 @@
 <p>Find me in app/views/pages/home.html.erb</p>-->
 <div class="container" id="homepage">
   <div class="row">
-    <!--<h3>Hi, <%#= @user.email %></h3>-->
 
-    <h2>Foodbee</h2>
+    <h1 class="title-card">Foodbee</h1>
 
-    <h3>Cook Like A Chef</h3>
-
-    <%= link_to "Add Products", products_path, class: "btn btn-outline-secondary btn-sm" %>
-    <%= link_to "Favourites", favourites_path, class: "btn btn-outline-secondary btn-sm" %>
+    <h3 class="motto-card">Cook Like A Chef</h3>
+    <div class="button-card d-flex justify-content-center">
+      <%= link_to "Add Products", products_path, class: "btn btn-outline-warning btn-sm" %>
+      <%= link_to "Favourites", favourites_path, class: "btn btn-outline-warning btn-sm" %>
+    </div>
   </div>
 </div>
 <!--class="btn btn-outline-secondary btn-sm"-->

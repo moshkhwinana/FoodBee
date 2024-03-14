@@ -1,4 +1,4 @@
-class RecipeController < ApplicationController
+class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
   end
@@ -8,7 +8,7 @@ class RecipeController < ApplicationController
   end
 
   def generate
-    titles = RecipeGenerator.new(params[:ingredients]).generate
+    @titles = RecipeGenerator.new(params[:ingredients]).generate
   end
 
   def create
