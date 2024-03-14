@@ -1,11 +1,13 @@
-<div class="container m-4">
-  <h2>Add a product</h2>
+<div class='container m-4'>
+  <h2 class='text-center'>Add a product</h2>
 
-  <p><%= form_with model: @product do |f| %></p>
-    <p><%= f.label :product_name %></p>
-    <p><%= f.text_field :product_name %></p>
-    <p><%= f.label :description %></p>
-    <p><%= f.text_field :description%></p>
-    <p><%= f.submit %></p>
-  <p><% end %></p>
+  <div class='d-flex justify-content-center'>
+    <p><%= form_with model: @product do |f| %></p>
+      <p><%= f.label :product_name %></p>
+      <p><%= f.text_field :product_name %></p>
+      <p><%= f.label :description %></p>
+      <p><%= f.text_field :description%></p>
+      <p><%= f.submit %></p>
+    <p><% end %></p>
+  </div>
 </div>

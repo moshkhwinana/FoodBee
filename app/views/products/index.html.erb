@@ -1,18 +1,21 @@
-<div class="container m-4 p-4">
-  <h2>Products</h2>
+<div class='container m-4 p-4 mb-4'>
+  <div class='heading text-center'>
+    <h2>Products</h2>
+    <p>Feel free to add any products you want to use for your recipes :)</p>
+  </div>
 
-  <div class="products-card mt-3">
-    <ul class="list-group">     <!--grouped appearance to list-->
+  <div class='products-card mt-3 d-flex justify-content-center'>
+    <ul class='list-group'>     <!--grouped appearance to list-->
       <% @products.each do |product| %>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
+      <li class='list-group-item d-flex justify-content-between align-items-center my-3'>
 
-        <div>
-          <div><%= product.product_name %></div>
-          <div class="text-muted"><%= product.description %></div>     <!--gives text lighter shade-->
+        <div class='card-product m-3'>
+          <div class='name'><img src='app/assets/images/foodbee-yellow.png' alt='circle'> <strong><%= product.product_name %></strong></div>
+          <div class='text-muted'><%= product.description %></div>     <!--gives text lighter shade-->
         </div>
 
-        <div class="btns">
-          <%= link_to 'Edit', edit_product_path(product) %> <%= link_to "Delete", product_path(product), method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+        <div class='btns'>
+          <%= link_to 'Edit', edit_product_path(product) %> <%= link_to 'Delete', product_path(product), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
         </div>
 
       </li>
@@ -20,7 +23,7 @@
     </ul>
   </div>
 
-  <div class="card">
-    <%= link_to 'Add a product', new_product_path, class: "btn btn-sm text-dark" %>
+  <div class='btn-product d-flex justify-content-center'>
+    <%= link_to 'Add product', new_product_path, class: 'btn btn-outline-swarning' %>
   </div>
 </div>

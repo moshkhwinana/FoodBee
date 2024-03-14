@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
-  has_many :recipe_ingredients
+  has_many :recipeingredients, dependent: :destroy
 
   validates :product_name, :description, presence: true
 end
-
