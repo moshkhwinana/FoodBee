@@ -3,7 +3,7 @@
 
 <% @recipes.each do |recipe| %>
   <div>
-    <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+    <h2><%= link_to recipe.recipe_name, recipe_path(recipe) %></h2>
     <%= button_to 'Favorite', new_favorite_path(recipe) %>
   </div>
 <% end %>

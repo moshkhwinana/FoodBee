@@ -7,6 +7,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def new
+    @recipe = Recipe.new
+  end
+
   def generate
     @titles = RecipeGenerator.new(params[:ingredients]).generate
   end
