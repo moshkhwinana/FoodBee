@@ -1,4 +1,4 @@
-puts "Destroying all records"
+puts "Destroying all tings"
 
 Recipeingredient.destroy_all
 Favourite.destroy_all
