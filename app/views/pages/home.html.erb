@@ -9,7 +9,10 @@
     <div class="button-card d-flex justify-content-center">
       <%= link_to "Add Products", products_path, class: "btn btn-outline-warning btn-sm" %>
       <%= link_to "Favourites", favourites_path, class: "btn btn-outline-warning btn-sm" %>
+      <%= link_to "Generate Recipe", generate_recipes_path, class: "btn btn-outline-secondary btn-sm", data: {turbo_method: :post} %>
+      <%= link_to "See all recipes", recipes_path, class: "btn btn-outline-secondary btn-sm" %>
     </div>
+
   </div>
 </div>
 <!--class="btn btn-outline-secondary btn-sm"-->
