@@ -1,16 +1,16 @@
 <!--<h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>-->
-<div class="container">
+<div class="container" id="homepage">
   <div class="row">
     <!--<h3>Hi, <%#= @user.email %></h3>-->
 
-    <h2>Welcome to Foodbee</h2>
+    <h2>Foodbee</h2>
 
     <%= link_to "Add Products", products_path, class: "btn btn-outline-secondary btn-sm" %>
     <%= link_to "Favourites", favourites_path, class: "btn btn-outline-secondary btn-sm" %>
     <%= link_to "Generate Recipe", generate_recipes_path, class: "btn btn-outline-secondary btn-sm", data: {turbo_method: :post} %>
     <%= link_to "See all recipes", recipes_path, class: "btn btn-outline-secondary btn-sm" %>
-
-  </div>
+    <h3>Cook Like A Chef</h3>
   </div>
 </div>
+<!--class="btn btn-outline-secondary btn-sm"-->
