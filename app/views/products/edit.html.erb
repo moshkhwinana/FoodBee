@@ -3,11 +3,11 @@
 
   <div class='card-form d-flex justify-content-center'>
     <p><%= form_with model: @product do |f| %></p>
-      <p><%= f.label :add_a_product_name_pookie %></p>
-      <p><%= f.text_field :product_name %></p>
-      <p><%= f.label :edit_your_description_pookie? %></p>
-      <p><%= f.text_field :description%></p>
-      <p><%= f.submit :updatepooks %></p>
+      <p><%= f.label :product_name %></p>
+      <p><%= f.text_field :product_name, class: 'name-field' %></p>
+      <p><%= f.label :description %></p>
+      <p><%= f.text_field :description, class: 'description-field' %></p>
+      <p><%= f.submit :Update %></p>
     <p><% end %></p>
   </div>
 </div>
