@@ -1,4 +1,8 @@
-<div class="container m-4">
+<%= link_to products_path, class: 'text-dark justify-content-start' do %>
+  <i class="fas fa-arrow-left"></i>
+<% end %>
+<div class="container-new m-4">
+
   <div class='card-whole row justify-content-center'>
     <h2 class='text-center'>Add a product</h2>
 
@@ -11,4 +15,5 @@
         <p><%= f.submit :Update, class: 'btn' %></p>
       <p><% end %></p>
     </div>
-</div>
+  </div>
+ <div>
