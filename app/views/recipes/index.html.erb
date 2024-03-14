@@ -9,5 +9,7 @@
 
   <% @recipes.each do |recipe| %>
     <p><%= recipe.recipe_name %>, created at: <%= recipe.created_at %></p>
+     <%= button_to 'Favorite', new_favorite_path(recipe) %>
   <% end %>
 </div>
+

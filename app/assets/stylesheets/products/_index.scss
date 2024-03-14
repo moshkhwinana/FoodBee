@@ -1,0 +1,53 @@
+$yellow: #FFF76A;
+
+.container {
+  .heading-div {
+    color: white;
+    font-weight: bold;
+  }
+  .list-group-item {
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: white;
+  }
+
+  .btns {
+    a {
+      color: grey;
+      text-decoration: none;
+      opacity: 0.7;
+    }
+  }
+
+  .btn-product {
+    a {
+      background-color: #FFF76A;
+      color: black;
+      text-decoration: none;
+      border-radius: 20px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    a:hover {
+      background-color: #fffddf;
+      transition: 0.6s;
+      border-color: #fffddf;
+      border-width: 3px;
+    }
+  }
+
+  .name img {
+    border-radius: 100%;
+    width: 20%;
+  }
+
+}
+
+body.products.index {
+    background: url('https://images.unsplash.com/photo-1619674072044-da7ecf3b17cd?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') fixed center;
+    backdrop-filter: blur(15px);
+    height: 190vh;
+}
+
+// background-color: rgb(231, 231, 231);
