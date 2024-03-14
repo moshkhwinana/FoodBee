@@ -1,16 +1,15 @@
 <!--<h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>-->
-<div class="container">
+<div class="container" id="homepage">
   <div class="row">
     <!--<h3>Hi, <%#= @user.email %></h3>-->
 
-    <h2>Welcome to Foodbee</h2>
+    <h2>Foodbee</h2>
 
-    <button type="button" class="btn btn-outline-secondary btn-sm">Add Products</button>
-    <%#= link_to "Add Products", products_path %>
-<!---->
-    <button type="button" class="btn btn-outline-secondary btn-sm">Favorites</button>
-  </div>
+    <h3>Cook Like A Chef</h3>
 
+    <%= link_to "Add Products", products_path, class: "btn btn-outline-secondary btn-sm" %>
+    <%= link_to "Favourites", favourites_path, class: "btn btn-outline-secondary btn-sm" %>
   </div>
 </div>
+<!--class="btn btn-outline-secondary btn-sm"-->
