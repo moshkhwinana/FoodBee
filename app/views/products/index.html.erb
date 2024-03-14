@@ -1,8 +1,11 @@
-<div class="container m-4 p-4">
-  <h2>Products</h2>
 
-  <div class="card mt-3"></div>
-    <ul>
+<div class='container m-4 p-4 mb-4'>
+  <div class='heading text-center'>
+    <h2>Products</h2>
+    <p>Feel free to add any products you want to use for your recipes :)</p>
+  </div>
+  <div class='products-card mt-3 d-flex justify-content-center'>
+    <ul class='list-group'>     <!--grouped appearance to list-->
       <% @products.each do |product| %>
       <li><%= product.product_name %> <%= link_to 'Edit', edit_product_path(product) %> <%= link_to "Delete", product_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
           <%= product.description %>
