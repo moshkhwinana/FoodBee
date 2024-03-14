@@ -1,13 +1,14 @@
-<div class='container m-4'>
-  <h2 class='text-center'>Add a product</h2>
+<div class="container m-4">
+  <div class='card-whole row justify-content-center'>
+    <h2 class='text-center'>Add a product</h2>
 
-  <div class='d-flex justify-content-center'>
-    <p><%= form_with model: @product do |f| %></p>
-      <p><%= f.label :product_name %></p>
-      <p><%= f.text_field :product_name %></p>
-      <p><%= f.label :description %></p>
-      <p><%= f.text_field :description%></p>
-      <p><%= f.submit %></p>
-    <p><% end %></p>
-  </div>
+    <div class='card-form d-flex justify-content-center'>
+      <p><%= form_with model: @product do |f| %></p>
+        <p><%= f.label :product_name, class: 'label' %></p>
+        <p><%= f.text_field :product_name, class: 'field' %></p>
+        <p><%= f.label :description, class: 'label' %></p>
+        <p><%= f.text_field :description, class: 'field' %></p>
+        <p><%= f.submit :Update, class: 'btn' %></p>
+      <p><% end %></p>
+    </div>
 </div>
