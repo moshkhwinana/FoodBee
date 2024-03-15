@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+
+  .header {
+    font-weight: bold;
+    font-size: 60px;
+  }
+
+  .card-recipe {
+    height: 50%;
+    backdrop-filter: blur(50px);
+    order: 2;
+    margin-top: 200px;
+  }
+
+}
+
+body.recipes.show {
+  background: url('https://www.flavormosaic.com/wp-content/uploads/2014/01/Spicy-Cilantro-Game-Day-Guacamole.jpg') fixed center;
+  background-size: cover;
+  background-position: center bottom 150px;
+  height: max-content;
+}
+
+// https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphoto%2Flatin-american-sauce-guacamole-and-avocado-sandwiches-on-dark-background-gm520616562-91032303&psig=AOvVaw14E6Nj0_EwQ2aVTaAX8_QX&ust=1710593428307000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNDT1p-n9oQDFQAAAAAdAAAAABAI
