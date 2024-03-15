@@ -3,13 +3,14 @@
 
   <h2>New AI recipes</h2>
 
-  <p>print new recipes from AI here</p>
+  <h2>Don't know what to cook, we got you</h2>
+  <%= button_to "generate recipes", generate_recipes_path %>
 
   <h2>Past recipes</h2>
-
-  <% @recipes.each do |recipe| %>
-    <p><%= recipe.recipe_name %>, created at: <%= recipe.created_at %></p>
-     <%= button_to 'Favorite', new_favorite_path(recipe) %>
-  <% end %>
+  <div>
+    <% @recipes.each do |recipe| %>
+      <p><%= link_to recipe.recipe_name, recipe_path(recipe) %>, created at: <%= recipe.created_at %></p>
+      <%#= button_to 'Favorite', new_favorite_path(recipe) %>
+    <% end %>
+  </div>
 </div>
-
