@@ -7,10 +7,10 @@
   <div>
     <% @recipes.each do |recipe| %>
       <div class="card">
-        <p><%= link_to recipe.recipe_name, recipe_path(recipe) %>, created at: <%= recipe.created_at %></p>
-        <p></p>
-        <span style="font-size: 10px; color: black;">
-          <i class="fa-regular fa-clock">Prep-Time</i>
+        <p><%= link_to recipe.recipe_name, recipe_path(recipe) %></p>
+        <p style="font-size: 12px; margin: 0;">created at: <%= recipe.created_at %></p>
+        <span style="font-size: 10px; color: #666;">
+          <i class="fa-regular fa-clock"></i> Prep Time: <%= recipe.prep_time %>
         </span>
       </div>
       <%#= button_to 'Favorite', new_favorite_path(recipe) %>
