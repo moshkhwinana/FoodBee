@@ -1,0 +1,27 @@
+body.recipes.index {
+  background-image: url('https://images.unsplash.com/photo-1613152834368-ff8e96fafe54?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjI2fHxkZWxpY2lvdXMlMjBmb29kJTIwd2l0aCUyMHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D');
+  margin: 20px auto;
+  width: 80%;
+  background-size:contain;
+}
+
+.card {
+  background: #FFF7EA;
+  border-radius: 4px;
+  margin: 0;
+  border: 1px solid #eee;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.card a{
+  color: ffbe0b;
+  text-decoration: none;
+}
+
+.btn {
+  background: #ffd60a;
+  border-radius: 4px;
+  box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f;
+}
