@@ -1,13 +1,18 @@
-<div class="container my-3">
-  <h1>All Recipes</h1>
-  <h2>New AI recipes</h2>
-  <h2>Don't know what to cook, we got you</h2>
-  <%= button_to "generate recipes", generate_recipes_path %>
-
+<div class="container my-3 align-items-center">
+  <h1>Learn, Cook, & Eat your food</h1>
+  <%= link_to "MORE RECIPES", generate_recipes_path, class: "btn", data: {turbo_method: :post} %>
+  <!-- <h2>New AI recipes</h2>
+  <h2>Don't know what to cook, we got you</h2>-->
   <h2>Past recipes</h2>
   <div>
     <% @recipes.each do |recipe| %>
-      <p><%= link_to recipe.recipe_name, recipe_path(recipe) %>, created at: <%= recipe.created_at %></p>
+      <div class="card">
+        <p><%= link_to recipe.recipe_name, recipe_path(recipe) %></p>
+        <p style="font-size: 12px; margin: 0;">created at: <%= recipe.created_at %></p>
+        <span style="font-size: 10px; color: #666;">
+          <i class="fa-regular fa-clock"></i> Prep Time: <%= recipe.prep_time %>
+        </span>
+      </div>
       <%#= button_to 'Favorite', new_favorite_path(recipe) %>
     <% end %>
   </div>
