@@ -17,7 +17,7 @@ class RecipeGenerator
       messages: [{
         role: 'user',
         content: <<-CONTENT
-          I'm creating a cooking app and need to generate recipes based on specific ingredients. The ingredients I have are: #{@ingredients.join(", ")}. Generate exactly 3 simple recipes that utilize these ingredients. For each recipe, provide the following details in a structured format:
+          I'm creating a cooking app and need to generate recipes based on specific ingredients. The ingredients I have are: #{@ingredients.join(" ")}. Generate exactly 3 simple recipes that utilize these ingredients. For each recipe, provide the following details in a structured format:
           - Recipe title
           - Steps (as an array of steps)
           - Difficulty level out of 5
@@ -25,7 +25,7 @@ class RecipeGenerator
           - Cooking time
           - Ingredients list
 
-          Return the answer as a JSON object, containing the following keys:
+          Return the answer as a JSON object, containing the following keys only:
           recipe_title, recipe_steps, recipe_difficulty, prep_time, cooking_time
         CONTENT
       }]
@@ -34,6 +34,7 @@ class RecipeGenerator
     begin
 
       content = chatgpt_response["choices"].first["message"]["content"]
+
       @recipes = extract_and_create_recipes(content)
 
       puts "Generated #{@recipes.count} recipes: #{@recipes}"
@@ -47,14 +48,17 @@ class RecipeGenerator
 
   def get_and_save_image_on_recipe(recipe)
     url = generate_image_for_recipe(recipe.recipe_name)
-    recipe.update(image_url: url)
+    # recipe.update(image_url: url)
+    puts "the image url is #{url}"
+    # recipe
+    url
   end
 
 
   private
 
   def generate_image_for_recipe(recipe_name)
-    prompt = "Generate a visually appealing image of #{recipe_name} made with #{@ingredients.join(', ')}."
+    prompt = "Generate a visually appealing image of #{recipe_name} made with #{@ingredients.join(' ')}."
 
     response = client.images.generate(parameters: { prompt: prompt, size: "256x256" })
     image_url = response.dig("data", 0, "url")
@@ -82,13 +86,15 @@ class RecipeGenerator
       }
 
       recipe = Recipe.create!(recipe_attributes)
-      recipe.image_url = generate_image_for_recipe(recipe.recipe_name)
-      recipe.save
+      # recipe.image_url = generate_image_for_recipe(recipe.recipe_name)
+      # url = get_and_save_image_on_recipe(recipe)
+      # puts "the image url is now #{url}"
+      # recipe.update!(image_url: url)
 
       # create a recipeingredient record for each product
-      @products.each do |product|
-        recipe.products << product
-      end
+      # @products.each do |product|
+      #   recipe.products << product
+      # end
 
       recipe
     end

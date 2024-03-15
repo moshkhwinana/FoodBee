@@ -7,8 +7,13 @@
   <%# end %>
 <!--</div>-->
 
+<div class="container">
 
-
-<h1><%= @recipe.name %></h1>
-<p><%= @recipe.description %></p>
+  <h1><%= @recipe.recipe_name %></h1>
+  <p>Prep time: <%= @recipe.prep_time %></p>
+  <p>Cooking time: <%= @recipe.cooking_time %></p>
+  <p>Difficulty: <%= @recipe.level %>/5</p>
+  <strong><p>Instructions</p></strong>
+  <p><%= @recipe.instructions %></p>
 <!-- Display recipe details here -->
+</div>
