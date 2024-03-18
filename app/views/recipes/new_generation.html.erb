@@ -1,7 +1,10 @@
-<%= form_with url: generate_recipes_path, method: :post do |form| %>
-  <!-- Search input -->
-  <input type="text" id="productSearch" placeholder="Search products...">
+<%= form_tag new_generate_recipes_path, method: :get, id: "searchForm" do %>
+  <%= text_field_tag :query, params[:query], placeholder: "Search products..." %>
+  <%= submit_tag "Search" %>
+<% end %>
 
+
+<%= form_with url: generate_recipes_path, method: :post do |form| %>
   <ul id="productsList">
     <% @products.each do |product| %>
       <li class="product-item">
