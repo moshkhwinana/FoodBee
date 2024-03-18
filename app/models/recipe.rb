@@ -3,6 +3,4 @@ class Recipe < ApplicationRecord
   has_many :recipeingredients
   has_many :products, through: :recipeingredients
   validates :recipe_name, :instructions, :prep_time, :cooking_time, :level, presence: true
-  has_one_attached :photo
-
 end
