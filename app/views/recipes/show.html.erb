@@ -21,10 +21,24 @@
 
     <div class="card-instructions mt-4">
       <ol>
-        <% @recipe.instructions.split(/\d+\./).each do |step| %>
-          <li><%= step.strip %></li>
+        <%
+        instructions = @recipe.instructions.gsub(/\n/, '<br>')
+        steps = instructions.split(/(?<!^)(?=\d+\.)/)
+
+        steps.each_with_index do |step, index|
+          step_content = if index == 0
+                          step.sub(/^1\.\s*/, '')
+                        else
+                          step.sub(/^\d+\.\s*/, '')
+                        end
+          step_content = step_content.html_safe
+        %>
+        <li><%= step_content %></li>
         <% end %>
       </ol>
+
+
+
     </div>
   </div>
 </div>
