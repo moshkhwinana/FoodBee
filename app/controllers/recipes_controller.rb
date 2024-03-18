@@ -29,7 +29,6 @@ class RecipesController < ApplicationController
     redirect_to recipes_path, notice: "Recipes generated successfully."
   end
 
-
   def create
     @recipe = Recipe.new(recipe_params)
   end
