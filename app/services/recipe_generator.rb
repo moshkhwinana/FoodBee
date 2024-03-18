@@ -46,26 +46,26 @@ class RecipeGenerator
     end
   end
 
-  def get_and_save_image_on_recipe(recipe)
-    url = generate_image_for_recipe(recipe.recipe_name)
-    # recipe.update(image_url: url)
-    puts "the image url is #{url}"
-    # recipe
-    url
-  end
+  # def get_and_save_image_on_recipe(recipe)
+  #   url = generate_image_for_recipe(recipe.recipe_name)
+  #   recipe.update(image_url: url)
+  #   puts "the image url is #{url}"
+  #   recipe
+  #   url
+  # end
 
 
   private
 
-  def generate_image_for_recipe(recipe_name)
-    prompt = "Generate a visually appealing image of #{recipe_name} made with #{@ingredients.join(' ')}."
+  # def generate_image_for_recipe(recipe_name)
+  #   prompt = "Generate a visually appealing image of #{recipe_name} made with #{@ingredients.join(' ')}."
 
-    response = client.images.generate(parameters: { prompt: prompt, size: "256x256" })
-    image_url = response.dig("data", 0, "url")
+  #   response = client.images.generate(parameters: { prompt: prompt, size: "256x256" })
+  #   image_url = response.dig("data", 0, "url")
 
-    puts "Generated image for recipe #{recipe_name}: #{image_url}"
-    image_url
-  end
+  #   puts "Generated image for recipe #{recipe_name}: #{image_url}"
+  #   image_url
+  # end
 
   def get_client
     @client ||= OpenAI::Client.new
@@ -86,14 +86,14 @@ class RecipeGenerator
       }
 
       recipe = Recipe.create!(recipe_attributes)
-      # recipe.image_url = generate_image_for_recipe(recipe.recipe_name)
-      # url = get_and_save_image_on_recipe(recipe)
-      # puts "the image url is now #{url}"
-      # recipe.update!(image_url: url)
+      recipe.image_url = generate_image_for_recipe(recipe.recipe_name)
+      url = get_and_save_image_on_recipe(recipe)
+      puts "the image url is now #{url}"
+      recipe.update!(image_url: url)
 
-      # create a recipeingredient record for each product
+      # create a recipeingredient record for each @product_name
       # @products.each do |product|
-      #   recipe.products << product
+      #   @recipe.products << product
       # end
 
       recipe
