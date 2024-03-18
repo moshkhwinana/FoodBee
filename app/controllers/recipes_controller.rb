@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all.order(created_at: :desc)
+    favourite_recipe_ids = Favourite.pluck(:recipe_id)
+    @recipes = Recipe.where.not(id: favourite_recipe_ids).order(created_at: :desc)
   end
 
   def show

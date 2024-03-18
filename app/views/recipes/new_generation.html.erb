@@ -1,3 +1,5 @@
+<h1>Sit back and relax while your personal AI Chef does its magic</h1>
+
 <%= form_tag new_generate_recipes_path, method: :get, id: "searchForm" do %>
   <%= text_field_tag :query, params[:query], placeholder: "Search products..." %>
   <%= submit_tag "Search" %>
@@ -14,5 +16,5 @@
     <% end %>
   </ul>
 
-  <%= form.submit "Generate Recipe" %>
+  <%= form.submit "Give me a Recipe" %>
 <% end %>

@@ -1,26 +1,32 @@
-<div class="container align-items-center text-dark">
-  <h1 class='mb-4'>Favourites</h1>
-
-  <%= form_tag favourites_path, method: :get, class: "d-flex justify-content-center mb-4" do %>
-    <%= text_field_tag :query,
-          params[:query],
-          class: "form-control mr-2",
-          placeholder: "Type a keyword"
-      %>
-    <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
-  <% end %>
-
-  <% if @favourites.empty? %>
-    <h4>You have no favourites yet</h4>
-  <% else %>
+<div class="container my-3 align-items-center text-dark">
+  <h1 class='quote'>Learn, Cook, & Eat your food</h1>
+  <%= link_to "Summon Kitchen Genius!", new_generate_recipes_path, class: "btn mt-4" %>
+  <!-- <h2>New AI recipes</h2>
+  <h2>Don't know what to cook, we got you</h2>-->
+ <!-- <h2 class="h2 mt-4">Past recipes</h2>-->
+  <div>
     <% @favourites.each do |favourite| %>
-      <span><%= link_to favourite.recipe.recipe_name, recipe_path(favourite.recipe), class: 'text-decoration-none' %> <%= link_to 'Delete', favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-dark text-decoration-none' %></span>
-      <p style="font-size: 12px; margin: 0;">created at: <%= favourite.recipe.created_at %></p>
-      <span style="font-size: 10px; color: #666;">
-        <i class="fa-regular fa-clock"></i> Prep Time: <%= favourite.recipe.prep_time %>
-      </span>
+      <div class="card mt-4 d-flex justify-content-between align-items-center">
+        <span>
+         <span><%= link_to favourite.recipe.recipe_name, recipe_path(favourite.recipe), class: 'text-decoration-none' %> <%= link_to 'Delete', favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-dark text-decoration-none' %></span>
+        <%= link_to recipe_favourites_path(favourite.recipe), class: "favourite-button", data: {turbo_method: :post} do %>
+          <i class="fa-solid fa-heart"></i>
+        <% end %>
+        </span>
+        <p style="font-size: 12px; margin: 0;">created at: <%= favourite.recipe.created_at %></p>
+        <span style="font-size: 10px; color: #666;">
+          <i class="fa-regular fa-clock"></i> Prep Time: <%= favourite.recipe.prep_time %>
+        </span>
+      </div>
+      <%#= button_to 'Favorite', new_favorite_path(recipe) %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
-<%= link_to 'Back to recipes', recipes_path, class: 'text-dark justify-content-start' %>
+<!--make the whole card a link-->
+
+
+<%#= link_to products_path, class: 'text-dark justify-content-start' do %>
+<!--  <i class="fa-solid fa-heart"></i>-->
+<%# end %>
+<!---->

@@ -25,8 +25,24 @@ class RecipeGenerator
           - Cooking time
           - Ingredients list
 
-          Return the answer as a JSON object, containing the following keys only:
-          recipe_title, recipe_steps, recipe_difficulty, prep_time, cooking_time
+          # Return the answer as a JSON object, containing the following keys only:
+          # recipe_title, recipe_steps, recipe_difficulty, prep_time, cooking_time
+          Return the answer in a JSON-like format, respecting the following structure exactly:
+        {
+          "recipes": [
+            {
+              "recipe_title": "TITLE",
+              "recipe_steps": ["Step 1", "Step 2", "..."],
+              "recipe_difficulty": X,
+              "prep_time": "X minutes",
+              "cooking_time": "X minutes",
+              "ingredients": ["Ingredient 1", "Ingredient 2", "..."]
+            }
+            // Note: Please ensure there are no trailing commas after the last element in lists or objects.
+          ]
+        }
+
+        Please adhere to this structure carefully to ensure compatibility with our parsing system.
         CONTENT
       }]
     })
@@ -56,16 +72,6 @@ class RecipeGenerator
 
 
   private
-
-  def generate_image_for_recipe(recipe_name)
-    prompt = "Generate a visually appealing image of #{recipe_name} made with #{@ingredients.join(' ')}."
-
-    response = client.images.generate(parameters: { prompt: prompt, size: "256x256" })
-    image_url = response.dig("data", 0, "url")
-
-    puts "Generated image for recipe #{recipe_name}: #{image_url}"
-    image_url
-  end
 
   def get_client
     @client ||= OpenAI::Client.new
