@@ -14,7 +14,7 @@ class FavouritesController < ApplicationController
     if @favourite.save
       # Identify Recipe IDs that have been favourited
       favourited_recipe_ids = Favourite.pluck(:recipe_id).uniq
-      generate_image_for_recipe(@recipe.recipe_name)
+      # generate_image_for_recipe(@recipe.recipe_name)
       # Delete Recipes that have not been favourited
       Recipe.where.not(id: favourited_recipe_ids).destroy_all
 
@@ -24,23 +24,21 @@ class FavouritesController < ApplicationController
     end
   end
 
-
   def destroy
     @favourite = Favourite.find(params[:id])
     @favourite.destroy
     redirect_to favourites_path, status: :see_other
   end
 
-  private
+  # private
 
-  def generate_image_for_recipe(recipe_name)
-    prompt = "Generate a visually appealing image of #{recipe_name} made with #{@ingredients.join(' ')}. Please enusre a dark background."
+  # def generate_image_for_recipe(recipe_name)
+  #   prompt = "Generate a visually appealing image of #{recipe_name} made with #{@ingredients.join(' ')}. Please enusre a dark background."
 
-    response = client.images.generate(parameters: { prompt: prompt, size: "256x256" })
-    image_url = response.dig("data", 0, "url")
+  #   response = client.images.generate(parameters: { prompt: prompt, size: "256x256" })
+  #   image_url = response.dig("data", 0, "url")
 
-    puts "Generated image for recipe #{recipe_name}: #{image_url}"
-    image_url
-  end
-
+  #   puts "Generated image for recipe #{recipe_name}: #{image_url}"
+  #   image_url
+  # end
 end

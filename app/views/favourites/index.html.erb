@@ -5,28 +5,25 @@
   <h2>Don't know what to cook, we got you</h2>-->
  <!-- <h2 class="h2 mt-4">Past recipes</h2>-->
   <div>
-    <% @favourites.each do |favourite| %>
-      <div class="card mt-4 d-flex justify-content-between align-items-center">
-        <span>
-         <span><%= link_to favourite.recipe.recipe_name, recipe_path(favourite.recipe), class: 'text-decoration-none' %> <%= link_to 'Delete', favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-dark text-decoration-none' %></span>
-        <%= link_to recipe_favourites_path(favourite.recipe), class: "favourite-button", data: {turbo_method: :post} do %>
-          <i class="fa-solid fa-heart"></i>
-        <% end %>
-        </span>
-        <p style="font-size: 12px; margin: 0;">created at: <%= favourite.recipe.created_at %></p>
-        <span style="font-size: 10px; color: #666;">
-          <i class="fa-regular fa-clock"></i> Prep Time: <%= favourite.recipe.prep_time %>
-        </span>
-      </div>
-      <%#= button_to 'Favorite', new_favorite_path(recipe) %>
+    <% if @favourites.empty? %>
+      <h4>You have no favourites yet</h4>
+    <% else %>
+      <% @favourites.each do |favourite| %>
+        <div class="card mt-4 d-flex justify-content-between align-items-center">
+          <span>
+            <%= link_to favourite.recipe.recipe_name, recipe_path(favourite.recipe), class: 'text-decoration-none' %>
+            <%= link_to favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-dark text-decoration-none' do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %>
+          </span>
+          <p style="font-size: 12px; margin: 0;">created at: <%= favourite.recipe.created_at %></p>
+          <span style="font-size: 10px; color: #666;">
+            <i class="fa-regular fa-clock"></i> Prep Time: <%= favourite.recipe.prep_time %>
+          </span>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
 
 <!--make the whole card a link-->
-
-
-<%#= link_to products_path, class: 'text-dark justify-content-start' do %>
-<!--  <i class="fa-solid fa-heart"></i>-->
-<%# end %>
-<!---->
