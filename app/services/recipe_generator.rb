@@ -79,11 +79,12 @@ class RecipeGenerator
     parsed_content["recipes"].map do |recipe|
       recipe_attributes = {
         recipe_name: recipe["recipe_title"],
-        instructions: recipe["recipe_steps"].join("\n"),
+        instructions: recipe["recipe_steps"].map { |step| step.gsub(",", " ") }.join("\n"),
         level: recipe["recipe_difficulty"],
         prep_time: recipe["prep_time"],
         cooking_time: recipe["cooking_time"]
       }
+
 
       recipe = Recipe.create!(recipe_attributes)
       # recipe.image_url = generate_image_for_recipe(recipe.recipe_name)

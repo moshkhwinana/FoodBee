@@ -12,15 +12,33 @@
 <% end %>
 <div class='container justify content center text-center'>
   <h1 class='header'><%= @recipe.recipe_name %></h1>
+  <%#= cl_image_tag @recipe.photo.key, alt: "AI-generated image of the recipe" if @recipe.photo.attached? %>
 
   <div class='card-recipe p-5'>
     <span><i class='fa-solid fa-clock'></i> <%= @recipe.prep_time %></span> |
     <span><i class='fa-regular fa-clock'></i> <%= @recipe.cooking_time %></span> |
     <span><i class='fas fa-check'></i> <%= @recipe.level %></span>
 
-
     <div class="card-instructions mt-4">
-      <%= @recipe.instructions %>
+      <ol>
+        <%
+        instructions = @recipe.instructions.gsub(/\n/, '<br>')
+        steps = instructions.split(/(?<!^)(?=\d+\.)/)
+
+        steps.each_with_index do |step, index|
+          step_content = if index == 0
+                          step.sub(/^1\.\s*/, '')
+                        else
+                          step.sub(/^\d+\.\s*/, '')
+                        end
+          step_content = step_content.html_safe
+        %>
+        <li><%= step_content %></li>
+        <% end %>
+      </ol>
+
+
+
     </div>
   </div>
 </div>
