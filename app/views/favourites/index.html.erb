@@ -8,7 +8,7 @@
     <% @favourites.each do |favourite| %>
       <div class="card mt-4 d-flex justify-content-between align-items-center">
         <span>
-        <%= link_to favourite.recipe.recipe_name, recipe_path(favourite.recipe) %>
+         <span><%= link_to favourite.recipe.recipe_name, recipe_path(favourite.recipe), class: 'text-decoration-none' %> <%= link_to 'Delete', favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-dark text-decoration-none' %></span>
         <%= link_to recipe_favourites_path(favourite.recipe), class: "favourite-button", data: {turbo_method: :post} do %>
           <i class="fa-solid fa-heart"></i>
         <% end %>
