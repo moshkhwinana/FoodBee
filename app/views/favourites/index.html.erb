@@ -14,7 +14,11 @@
     <h4>You have no favourites yet</h4>
   <% else %>
     <% @favourites.each do |favourite| %>
-      <%= favourite.recipe.recipe_name %> <%= link_to 'Delete', favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+      <span><%= link_to favourite.recipe.recipe_name, recipe_path(favourite.recipe), class: 'text-decoration-none' %> <%= link_to 'Delete', favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-dark text-decoration-none' %></span>
+      <p style="font-size: 12px; margin: 0;">created at: <%= favourite.recipe.created_at %></p>
+      <span style="font-size: 10px; color: #666;">
+        <i class="fa-regular fa-clock"></i> Prep Time: <%= favourite.recipe.prep_time %>
+      </span>
     <% end %>
   <% end %>
 </div>
