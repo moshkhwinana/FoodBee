@@ -24,20 +24,6 @@ ratatouille = Recipe.create(recipe_name: "Ratatouille", instructions: "1. Prehea
 
 puts "Created some recipes"
 
-Recipeingredient.create!(product_id: avocado.id, recipe_id: guacamole.id, quantity: "2", unit: "whole")
-
-Recipeingredient.create!(product_id: cilantro.id, recipe_id: guacamole.id, quantity: "1 tablespoon", unit: "chopped")
-
-Recipeingredient.create!(product_id: lime.id, recipe_id: guacamole.id, quantity: "1", unit: "whole")
-
-Recipeingredient.create!(product_id: eggplant.id, recipe_id: ratatouille.id, quantity: "1", unit: "whole")
-
-Recipeingredient.create!(product_id: zucchini.id, recipe_id: ratatouille.id, quantity: "2", unit: "whole")
-
-Recipeingredient.create!(product_id: bell_pepper.id, recipe_id: ratatouille.id, quantity: "2", unit: "whole")
-
-puts "Associated products with recipes"
-
 Favourite.create!(user: user, recipe: guacamole)
 
 puts "Favourited a recipe"
