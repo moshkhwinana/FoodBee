@@ -1,7 +1,10 @@
 class FavouritesController < ApplicationController
   def index
-    # @favourites = Favourite.all
-    @favourites = current_user.favourites
+    if params[:query].present?
+      @favourites = Favourite.search_by_recipe_name(params[:query])
+    else
+      @favourites = current_user.favourites
+    end
   end
 
   def create
