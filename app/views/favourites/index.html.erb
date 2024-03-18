@@ -1,7 +1,14 @@
-<%= link_to 'Back to recipes', recipes_path, class: 'text-light justify-content-start' %>
-
 <div class="container align-items-center text-dark">
-  <h1>Favourites</h1>
+  <h1 class='mb-4'>Favourites</h1>
+
+  <%= form_tag favourites_path, method: :get, class: "d-flex justify-content-center mb-4" do %>
+    <%= text_field_tag :query,
+          params[:query],
+          class: "form-control mr-2",
+          placeholder: "Type a keyword"
+      %>
+    <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+  <% end %>
 
   <% if @favourites.empty? %>
     <h4>You have no favourites yet</h4>
@@ -11,3 +18,5 @@
     <% end %>
   <% end %>
 </div>
+
+<%= link_to 'Back to recipes', recipes_path, class: 'text-dark justify-content-start' %>
