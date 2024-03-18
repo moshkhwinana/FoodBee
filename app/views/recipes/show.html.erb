@@ -19,9 +19,12 @@
     <span><i class='fa-regular fa-clock'></i> <%= @recipe.cooking_time %></span> |
     <span><i class='fas fa-check'></i> <%= @recipe.level %></span>
 
-
     <div class="card-instructions mt-4">
-      <%= @recipe.instructions %>
+      <ol>
+        <% @recipe.instructions.split(/\d+\./).each do |step| %>
+          <li><%= step.strip %></li>
+        <% end %>
+      </ol>
     </div>
   </div>
 </div>

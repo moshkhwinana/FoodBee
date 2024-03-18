@@ -19,7 +19,7 @@ class RecipeGenerator
         content: <<-CONTENT
           I'm creating a cooking app and need to generate recipes based on specific ingredients. The ingredients I have are: #{@ingredients.join(" ")}. Generate exactly 3 simple recipes that utilize these ingredients. For each recipe, provide the following details in a structured format:
           - Recipe title
-          - Steps (as an array of steps)
+          - Steps provided in a list format, starting with "1."
           - Difficulty level out of 5
           - Preparation time
           - Cooking time
