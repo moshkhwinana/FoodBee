@@ -1,7 +1,7 @@
-<%= link_to recipes_path, class: 'text-light justify-content-start' do %>
+<%= link_to recipes_path, class: 'text-dark justify-content-start' do %>
   <i class='fas fa-arrow-left'></i>
 <% end %>
-<div class='container justify content center text-center'>
+<div class='container text-center'>
   <h1 class='header'><%= @recipe.recipe_name %></h1>
   <%#= cl_image_tag @recipe.photo.key, alt: "AI-generated image of the recipe" if @recipe.photo.attached? %>
 
