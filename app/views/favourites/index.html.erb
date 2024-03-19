@@ -1,21 +1,22 @@
-<div class="container my-3 align-items-center text-dark">
-  <h1 class='quote'>Learn, Cook, & Eat your food</h1>
-  <%= link_to "Summon Kitchen Genius!", new_generate_recipes_path, class: "btn mt-4" %>
+<%= link_to recipes_path, class: 'text-light justify-content-start' do %>
+  <i class='fas fa-arrow-left'></i>
+<% end %>
+<div class="container my-3 align-items-center text-light">
+  <h1 class='quote text-center'>Learn, Cook, & Eat your food</h1>
+  <%= link_to "Summon Kitchen Genius!", new_generate_recipes_path, class: "btn mb-2" %>
   <div>
     <% if @favourites.empty? %>
       <h4>You have no favourites yet</h4>
     <% else %>
       <% @favourites.each do |favourite| %>
         <div class="card mt-4 d-flex justify-content-between align-items-center">
-          <span>
-            <%= link_to favourite.recipe.recipe_name, recipe_path(favourite.recipe), class: 'text-decoration-none' %>
-            <%= link_to favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-dark text-decoration-none' do %>
-              <i class="fa-solid fa-trash-can"></i>
-            <% end %>
-          </span>
+            <%= link_to favourite.recipe.recipe_name, recipe_path(favourite.recipe), class: 'bold-name text-decoration-none' %>
           <p style="font-size: 12px; margin: 0;">created at: <%= favourite.recipe.created_at %></p>
           <span style="font-size: 10px; color: #666;">
             <i class="fa-regular fa-clock"></i> Prep Time: <%= favourite.recipe.prep_time %>
+            <%= link_to favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-dark text-decoration-none' do %>
+              <i class="fa-solid fa-trash-can mx-auto"></i>
+            <% end %>
           </span>
         </div>
       <% end %>
