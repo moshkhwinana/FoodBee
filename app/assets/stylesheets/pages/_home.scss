@@ -2,24 +2,50 @@
 $cream: #F9FBF2;
 $black: black;
 
-.container {
+#homepage {
+  height: 100vh; // This makes sure the container fills the entire height of the viewport
+  display: flex;
+  // flex-direction: column;
+  justify-content: flex-end; // This pushes the content to the bottom
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.75;
+
   .row {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    align-items: end; // Center content horizontally
 
-    .title-card,
-    .motto-card {
-      font-family: 'Antonio';
-      backdrop-filter: blur(10px);
-      color: $cream;
-      padding: 70px;
+    h1, h3 {
+      margin: 0; // Remove default margins or adjust as necessary
+      padding: 0.5rem 0; // Add some padding if needed
       text-align: center;
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-      width: 100%;
-      max-width: 600px;
-      font-weight: bold;
+      font-size: 2.5rem; // Example for a large, attention-grabbing heading
+      font-weight: 700;
+    }
+
+    .button-card {
+      display: flex;
+      justify-content: space-between; // This will take effect if there's enough horizontal space
+      width: 100%; // Adjust this width as necessary
+      padding: 0.5rem 0; // Add some padding for spacing
+
+      .btn {
+        margin: 0 5px; // Ensure buttons don't stick together
+        background-color: #fdd835;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        font-weight: bold;
+        color: #333;
+        border-radius: 15px;
+        transition: background-color 0.3s, transform 0.2s; // Smooth transitions
+
+        &:hover {
+          background-color: #fbc02d; // Slightly lighter yellow on hover
+          transform: translateY(-2px); // Slight lift effect
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+        }
+      }
     }
   }
 }
@@ -29,17 +55,6 @@ body.pages.home {
   background: url('https://images.unsplash.com/photo-1619674072044-da7ecf3b17cd?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') fixed center;
   background-size: cover;
   color: $cream;
+  justify-content: flex-end; // This pushes the content to the bottom
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.button-card {
-  font-family: "Fredoka", sans-serif;
-  font-weight: bold;
-  sm: 540px;
-  display: flex;
-  color: black;
-  padding: 0.25rem 0.5rem;
-  margin-top: 20px;
-  justify-content: space-between;
-  width: fit-content;
 }
