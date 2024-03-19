@@ -1,0 +1,18 @@
+<div class="card-recipe mt-3 extra-rounded">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-recipe-infos">
+    <div class="card-recipe-right">
+      <%= link_to recipe.recipe_name, recipe_path(recipe), id: 'bold-link' %>
+      <div class="badge rounded-pill text-bg-warning mt-2"><i class="fa-regular fa-clock"></i> <%= recipe.prep_time %></div>
+    </div>
+    <div class="card-recipe-left">
+      <%= link_to recipe_favourites_path(recipe), class: "favourite-button", data: {turbo_method: :post} do %>
+        <% if recipe.favourite(current_user) %>
+          <i class='fa-solid fa-heart mx-auto'></i>
+        <% else %>
+          <i class='fa-regular fa-heart'></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
