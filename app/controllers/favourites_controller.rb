@@ -41,4 +41,5 @@ class FavouritesController < ApplicationController
   #   puts "Generated image for recipe #{recipe_name}: #{image_url}"
   #   image_url
   # end
+
 end
