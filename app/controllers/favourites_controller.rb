@@ -1,7 +1,9 @@
+require 'open-uri'
+
 class FavouritesController < ApplicationController
   def index
     if params[:query].present?
-      @favourites = Favourite.search_by_recipe_name(params[:query])
+      @favourites = Favourite.search_by_recipe_name(params[:query]).order
     else
       @favourites = current_user.favourites
     end
@@ -12,12 +14,9 @@ class FavouritesController < ApplicationController
     @favourite = Favourite.new(user_id: current_user.id, recipe_id: @recipe.id)
 
     if @favourite.save
-      # Identify Recipe IDs that have been favourited
       favourited_recipe_ids = Favourite.pluck(:recipe_id).uniq
-      # generate_image_for_recipe(@recipe.recipe_name)
-      # Delete Recipes that have not been favourited
+      set_photo(@recipe.recipe_name)
       Recipe.where.not(id: favourited_recipe_ids).destroy_all
-
       redirect_to favourites_path, notice: "Recipe favourited successfully"
     else
       redirect_to recipes_path, alert: "Failed to favourite recipe"
@@ -30,16 +29,22 @@ class FavouritesController < ApplicationController
     redirect_to favourites_path, status: :see_other
   end
 
-  # private
+  private
 
-  # def generate_image_for_recipe(recipe_name)
-  #   prompt = "Generate a visually appealing image of #{recipe_name} made with #{@ingredients.join(' ')}. Please enusre a dark background."
+  def set_photo(recipe)
+    recipe_name = recipe
+    client = OpenAI::Client.new
+    response = client.images.generate(parameters: {
+      prompt: "Generate a visually appealing image of #{recipe_name}. Please enusre a dark background",
+      size: "1024x1024"
+    })
 
-  #   response = client.images.generate(parameters: { prompt: prompt, size: "256x256" })
-  #   image_url = response.dig("data", 0, "url")
+    image_url = response["data"][0]["url"]
+    file =  URI.open(image_url)
 
-  #   puts "Generated image for recipe #{recipe_name}: #{image_url}"
-  #   image_url
-  # end
+    @recipe.photo.purge if @recipe.photo.attached?
+    @recipe.photo.attach(io: file, filename: "ai_generated_image_#{recipe.parameterize}.jpg", content_type: "image/png")
 
+    return @recipe.photo
+  end
 end
