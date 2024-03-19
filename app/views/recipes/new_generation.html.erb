@@ -1,20 +1,22 @@
-<h1>Sit back and relax while your personal AI Chef does its magic</h1>
+<div class='container'>
+  <h1>Sit back and relax while your personal AI Chef does its magic</h1>
 
-<%= form_tag new_generate_recipes_path, method: :get, id: "searchForm" do %>
-  <%= text_field_tag :query, params[:query], placeholder: "Search products..." %>
-  <%= submit_tag "Search" %>
-<% end %>
+  <%= form_tag new_generate_recipes_path, method: :get, id: "searchForm" do %>
+    <%= text_field_tag :query, params[:query], placeholder: "Search products..." %>
+    <%= submit_tag "Search" %>
+  <% end %>
 
 
-<%= form_with url: generate_recipes_path, method: :post do |form| %>
-  <ul id="productsList">
-    <% @products.each do |product| %>
-      <li class="product-item">
-        <%= form.label :product_ids, product.product_name, value: product.id %>
-        <%= form.check_box :product_ids, { multiple: true, class: 'product-checkbox' }, product.id, nil %>
-      </li>
-    <% end %>
-  </ul>
+  <%= form_with url: generate_recipes_path, method: :post do |form| %>
+    <ul id="productsList">
+      <% @products.each do |product| %>
+        <li class="product-item">
+          <%= form.label :product_ids, product.product_name, value: product.id %>
+          <%= form.check_box :product_ids, { multiple: true, class: 'product-checkbox' }, product.id, nil %>
+        </li>
+      <% end %>
+    </ul>
 
-  <%= form.submit "Give me a Recipe" %>
-<% end %>
+    <%= form.submit "Give me a Recipe" %>
+  <% end %>
+</div>
