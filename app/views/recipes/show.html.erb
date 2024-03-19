@@ -1,4 +1,4 @@
-<%= link_to recipes_path, class: 'text-light justify-content-start' do %>
+<%= link_to recipes_path, class: 'text-dark justify-content-start' do %>
   <i class='fas fa-arrow-left'></i>
 <% end %>
   <%= cl_image_tag @recipe.photo.key, alt: "AI-generated image of the recipe" if @recipe.photo.attached? %>

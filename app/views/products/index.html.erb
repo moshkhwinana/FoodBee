@@ -3,6 +3,7 @@
     <h1>Groceries</h1>
     <p>Feel free to add any ingredients you want to use for your recipes :)</p>
   </div>
+
   <div class='products-card mt-3 d-flex justify-content-center'>
     <ul class='list-group'>     <!--grouped appearance to list-->
       <% @products.each do |product| %>
@@ -12,7 +13,14 @@
           <div class='text-muted'><%= product.description %></div>     <!--gives text lighter shade-->
         </div>
         <div class='btns'>
-          <%= link_to 'Edit', edit_product_path(product) %> <%= link_to 'Delete', product_path(product), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+          <span>
+            <%= link_to edit_product_path(product) do %>
+              <i class="fa-solid fa-pen"></i>
+            <% end %>
+            <%= link_to product_path(product), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %>
+          </span>
         </div>
       </li>
       <% end %>
