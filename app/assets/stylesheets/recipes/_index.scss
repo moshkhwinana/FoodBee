@@ -7,7 +7,7 @@ body.recipes.index {
 
 .card {
   // width: 80%;
-  background: #FFF7EA;
+  background: #fdf9f3;
   border-radius: 20px;
   margin: 0;
   border: 1px solid #eee;
@@ -20,6 +20,9 @@ body.recipes.index {
   //   top: 5px;
   //   right: 2px;
   // }
+  #bold-link {
+    font-weight: bold;
+  }
 }
 
 .card a{
