@@ -3,7 +3,7 @@ $yellow: #FFF76A;
 .container {
   .heading-div {
     color: white;
-    font-weight: bold;
+    // font-weight: bold;
   }
   .list-group-item {
     border-radius: 20px;
@@ -45,9 +45,11 @@ $yellow: #FFF76A;
 }
 
 body.products.index {
-    background: url('https://images.unsplash.com/photo-1619674072044-da7ecf3b17cd?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') fixed center;
-    backdrop-filter: blur(15px);
+    background: url('https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fGZvb2QlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww') fixed center;
+    backdrop-filter: blur(5px);
+    background-size: contain;
     height: max-content;
+    margin: 20px auto;
 }
 
 // background-color: rgb(231, 231, 231);
