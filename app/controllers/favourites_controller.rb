@@ -35,6 +35,7 @@ class FavouritesController < ApplicationController
     recipe_name = recipe
     client = OpenAI::Client.new
     response = client.images.generate(parameters: {
+      model: "dall-e-3",
       prompt: "Generate a visually appealing image of #{recipe_name}. Please enusre a dark background",
       size: "1024x1024"
     })
