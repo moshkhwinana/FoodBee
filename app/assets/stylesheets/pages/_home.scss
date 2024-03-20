@@ -61,8 +61,57 @@ $black: black;
 
 body.pages.home {
   font-family: 'Antonio';
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0)), url('https://images.unsplash.com/photo-1619674072044-da7ecf3b17cd?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') fixed center;  background-size: cover;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0)), url('https://images.unsplash.com/photo-1619674072044-da7ecf3b17cd?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') fixed center;  background-size: cover;
   color: $cream;
   justify-content: flex-end; // This pushes the content to the bottom
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.container-homepage {
+  font-family: $app-font;
+
+  h1 {
+    font-family: $app-font;
+  }
+
+  h3 {
+    font-family: $app-font;
+    font-weight: lighter;
+  }
+
+  .card {
+    // width: 80%;
+    background: #fdf9f3;
+    border-radius: 20px;
+    margin: 0;
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+    // .favourite-button {
+    //   position: absolute;
+    //   top: 5px;
+    //   right: 2px;
+    // }
+    #bold-link {
+      font-weight: bold;
+    }
+  }
+
+  .card a{
+    color: black;
+    text-decoration: none;
+  }
+
+  .card a:hover {
+    color: #ffc300;
+  }
+
+  .btn {
+    background: #ffd60a;
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f;
+  }
 }
