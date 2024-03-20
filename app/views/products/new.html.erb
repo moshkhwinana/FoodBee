@@ -19,13 +19,12 @@
   </div>
 <div>-->
 
-<div class="container" id="new-product-page-container">
-
-  <%= link_to :back, class: 'text-dark justify-content-start' do %>
+<div class="container-new">
+  <%= link_to :back, class: 'text-light justify-content-start mx-3' do %>
     <i class="fas fa-arrow-left"></i>
   <% end %>
 
-  <div>
+  <div class="card-whole">
     <h2 class="text-center">Add a product</h2>
     <div class='card-form d-flex justify-content-center'>
       <%= form_with model: @product do |f| %>
@@ -37,7 +36,4 @@
       <% end %>
     </div>
   </div>
-
-
-
 </div>

@@ -19,8 +19,6 @@
 
 }
 
-
-
 body.recipes.show {
   // background-image: url('<%= cl_image_path @recipe.photo.key %>') fixed center;
   background-size: cover;
