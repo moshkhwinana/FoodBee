@@ -1,0 +1,14 @@
+<div class="card-recipe mt-4 extra-rounded ">
+  <%= image_tag "hot-dish.png", alt: "chef image" %>
+  <div class="card-recipe-infos">
+    <div class="card-recipe-right">
+      <%= link_to recipe.recipe_name, recipe_path(recipe), id: 'bold-link' %>
+      <div class="badge rounded-pill text-dark bg-white mt-2"><i class="fa-regular fa-clock"></i> Prep time: <%= recipe.prep_time %></div>
+    </div>
+    <div class="card-recipe-left">
+      <%= link_to recipe_favourites_path(recipe), class: "favourite-button", data: {turbo_method: :post} do %>
+        <i class='fa-solid fa-heart mx-auto'></i>
+      <% end %>
+    </div>
+  </div>
+</div>
