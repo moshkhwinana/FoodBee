@@ -7,12 +7,6 @@
     <% end %>
   </div>
 
-<!--  <div class="products-index-form-wrapper my-4">-->
-    <%#= form_tag new_generate_recipes_path, method: :get, id: "searchForm" do %>
-      <%#= text_field_tag :query, params[:query], placeholder: "Search products..." %>
-      <%#= submit_tag "Search" %>
-    <%# end %>
-<!--  </div>-->
 
   <div class="products-index-form-wrapper my-4">
     <%= form_with url: products_path, method: :get, html: {data: {search_products_target: "form"}} do |f| %>
@@ -27,6 +21,5 @@
   <%= render "products_list", products: @products %>
 
 
-    <%#= link_to 'Create recipe', new_generate_recipes_path, class: 'btn btn-outline' %>
   </div>
 </div>
