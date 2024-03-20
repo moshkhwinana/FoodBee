@@ -1,12 +1,11 @@
-<div class='container justify-content-center'>
-  <div class='heading-div text-center'>
+<div class='container-products-index justify-content-center' data-controller="search-products">
+
+  <div class='heading-div text-center mt-5'>
     <h1>Your Ingredients</h1>
-    <p><em>Feel free to add any ingredients you want to use for your recipes :)</em></p>
+    <%= link_to new_product_path, class: 'btn btn-outline' do %>
+      <i class="fa-solid fa-circle-plus" style="font-size: 24px;"></i>
+    <% end %>
   </div>
-  <%= form_tag new_generate_recipes_path, method: :get, id: "searchForm" do %>
-    <%= text_field_tag :query, params[:query], placeholder: "Search products..." %>
-    <%= submit_tag "Search" %>
-  <% end %>
 
   <div class='products-card mt-3'>
     <ul class='list-group'>
@@ -44,4 +43,22 @@
     </ul>
   </div>
 
+<!--  <div class="products-index-form-wrapper my-4">-->
+
+<!--  </div>-->
+
+  <div class="products-index-form-wrapper my-4">
+    <%= form_with url: products_path, method: :get, html: {data: {search_products_target: "form"}} do |f| %>
+      <%= f.text_field :query,
+                        class: "form-control",
+                        value: params[:query],
+                        placeholder: "Search products...",
+                        data: {search_products_target: "input", action: "keyup->search-products#update"} %>
+    <% end %>
+  </div>
+
+  <%= render "products_list", products: @products %>
+
+
+  </div>
 </div>
