@@ -7,9 +7,14 @@ body.favourites.index {
 }
 .container {
   font-family: $app-font;
-  
+
   h1 {
     font-family: $app-font;
+  }
+
+  h3 {
+    font-family: $app-font;
+    font-weight: lighter;
   }
 
   .card {

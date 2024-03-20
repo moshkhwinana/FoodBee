@@ -1,9 +1,8 @@
 <div class='container justify-content-center'>
   <div class='heading-div text-center'>
-    <h1>Groceries</h1>
+    <h1>Your Ingredients</h1>
     <p><em>Feel free to add any ingredients you want to use for your recipes :)</em></p>
   </div>
-
   <%= form_tag new_generate_recipes_path, method: :get, id: "searchForm" do %>
     <%= text_field_tag :query, params[:query], placeholder: "Search products..." %>
     <%= submit_tag "Search" %>
@@ -44,5 +43,3 @@
     <%#= link_to 'Create recipe', new_generate_recipes_path, class: 'btn btn-outline' %>
   </div>
 </div>
-
-<!--   <%= link_to 'Add product', new_product_path, class: 'btn btn-outline' %> <%= link_to 'Recipe suggestions',generate_recipes_path, class: 'btn btn-outline',data: {turbo_method: :post}  %> -->
