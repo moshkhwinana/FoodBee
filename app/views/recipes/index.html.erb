@@ -1,27 +1,23 @@
 <div class="container my-3 align-items-center text-light">
   <h1 class='quote'>Kitchen Genius</h1>
   <p><em>Pick an AI generated recipe to add to your list of favourites...</em></p>
-  <!-- <h2>New AI recipes</h2>
-  <h2>Don't know what to cook, we got you</h2>-->
- <!-- <h2 class="h2 mt-4">Past recipes</h2>-->
-  <div>
-    <% @recipes.each do |recipe| %>
-      <%= render 'recipes/partials/recipe-card', recipe: recipe %>
-<!--      <div class="card mt-4 d-flex justify-content-between align-items-center">
-        <span>
-        <%#= link_to recipe.recipe_name, recipe_path(recipe), id: 'bold-link' %>-->
-        <%#= link_to recipe_favourites_path(recipe), class: "favourite-button", data: {turbo_method: :post} do %>
-<!--          <i class="fa-solid fa-heart mx-auto"></i>-->
-        <%# end %>
-<!--        </span>
-        <p style="font-size: 12px; margin: 0;">created at: <%#= recipe.created_at %></p>
-        <span style="font-size: 10px; color: #666;">
-          <i class="fa-regular fa-clock"></i> Prep Time: <%#= recipe.prep_time %>
-        </span>
-      </div>-->
-      <%#= button_to 'Favorite', new_favorite_path(recipe) %>
-    <% end %>
-  </div>
+
+  <% @recipes.each do |recipe| %>
+    <%= render 'recipes/partials/recipe-card', recipe: recipe %>
+    <!--<div class="card mt-4 d-flex justify-content-between align-items-center">
+      <span>
+      <%#= link_to recipe.recipe_name, recipe_path(recipe), id: 'bold-link' %>-->
+      <%#= link_to recipe_favourites_path(recipe), class: "favourite-button", data: {turbo_method: :post} do %>
+<!--        <i class="fa-solid fa-heart mx-auto"></i>-->
+      <%# end %>
+<!--      </span>
+      <p style="font-size: 12px; margin: 0;">created at: <%#= recipe.created_at %></p>
+      <span style="font-size: 10px; color: #666;">
+        <i class="fa-regular fa-clock"></i> Prep Time: <%#= recipe.prep_time %>
+      </span>
+    </div>
+    <%#= button_to 'Favorite', new_favorite_path(recipe) %>-->
+  <% end %>
 </div>
 
 <!--make the whole card a link-->

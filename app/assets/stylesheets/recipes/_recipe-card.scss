@@ -5,11 +5,15 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+
+  .badge {
+    background-color: white;
+  }
 }
 
 .card-recipe img {
   height: 100%;
-  width: 120px;
+  width: 40px;
   object-fit: cover;
   margin-left: 12px;
   border-radius: 12px;
@@ -47,5 +51,5 @@
 }
 
 .extra-rounded {
-  border-radius: 16px;
+  border-radius: 20px;
 }
