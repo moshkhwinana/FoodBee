@@ -2,31 +2,33 @@
   <ul class='list-group'>
     <%= form_with url: generate_recipes_path, method: :post do |form| %>
       <ul id="productsList">
-        <% products.each do |product| %>
-          <li class='list-group-item d-flex justify-content-between align-items-center'>
-            <div class='card-product'>
-              <div class='name'><%= image_tag "foodbee-yellow.jpg", alt: "circle image" %>
-                <strong><%= product.product_name %></strong>
-                <span>
-                  <%= link_to edit_product_path(product) do %>
-                    <i class="fa-solid fa-pen" style='color: #000000'></i>
-                  <% end %>
-                  <%= link_to product_path(product), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
-                    <i class="fa-solid fa-trash-can" style='color: #000000'></i>
-                  <% end %>
-                </span>
-              </div>
+        <% @products.each do |product| %>
+        <li class='list-group-item d-flex justify-content-between align-items-center'>
+          <div class='card-product'>
+            <div class='name'><%= image_tag "foodbee-yellow.jpg", alt: "circle image" %>
+              <strong class="product-name"><%= product.product_name %></strong>
+              <span>
+                <%= link_to edit_product_path(product) do %>
+                  <i class="fa-solid fa-pen" style='color: #000000'></i>
+                <% end %>
+                <%= link_to product_path(product), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+                  <i class="fa-solid fa-trash-can" style='color: #000000'></i>
+                <% end %>
+              </span>
             </div>
-            <div class='text-muted description'><%= product.description %></div>
-            </div>
-            <div class='btns'>
-              <%= form.check_box :product_ids, { multiple: true, class: 'product-checkbox' }, product.id, nil %>
-            </div>
-          </li>
+          <div class='text-muted description'><%= product.description %></div>
+          </div>
+          <div class='btns'>
+            <%= form.check_box :product_ids, { multiple: true, class: 'product-checkbox' }, product.id, nil %>
+          </div>
+        </li>
         <% end %>
       </ul>
+
       <div class='btn-product text-center'>
         <%= form.submit "Give me a Recipe", class: 'btn btn-outline' %>
+        <%= link_to 'Add grocery', new_product_path, class: 'btn btn-outline' %>
+        <%#= link_to 'Create recipe', new_generate_recipes_path, class: 'btn btn-outline' %>
       </div>
     <% end %>
   </ul>
