@@ -3,10 +3,11 @@ body.recipes.index {
   margin: 20px auto;
   background-size:contain;
   backdrop-filter: blur(5px);
+  font-family: $app-font;
 }
 .container {
-  font-family: 'Montserrat', sans-serif;
-  
+  font-family: $app-font;
+
   .card {
     // width: 80%;
     background: #fdf9f3;
