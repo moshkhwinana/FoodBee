@@ -1,10 +1,15 @@
 <div class='container justify-content-center'>
   <div class='heading-div text-center'>
-    <h1>Groceries</h1>
+    <h1>Your Ingredients</h1>
     <p><em>Feel free to add any ingredients you want to use for your recipes :)</em></p>
   </div>
 
-  <div class='products-card mt-3'>
+  <div class='btn-product text-center my-3'>
+    <%= link_to 'Add grocery', new_product_path, class: 'btn btn-outline' %>
+    <%= link_to 'Create recipe', new_generate_recipes_path, class: 'btn btn-outline' %>
+  </div>
+
+  <div class='products-card'>
     <ul class='list-group'>     <!--grouped appearance to list-->
       <% @products.each do |product| %>
       <li class='list-group-item d-flex justify-content-between align-items-center'>
@@ -26,11 +31,4 @@
       <% end %>
     </ul>
   </div>
-
-  <div class='btn-product text-center'>
-    <%= link_to 'Add grocery', new_product_path, class: 'btn btn-outline' %>
-    <%= link_to 'Create recipe', new_generate_recipes_path, class: 'btn btn-outline' %>
-  </div>
 </div>
-
-<!--   <%= link_to 'Add product', new_product_path, class: 'btn btn-outline' %> <%= link_to 'Recipe suggestions',generate_recipes_path, class: 'btn btn-outline',data: {turbo_method: :post}  %> -->

@@ -1,0 +1,59 @@
+<div class="navbar-foodbee">
+  <div class="navbar-icons-container">
+
+    <% if current_page?(root_path) %>
+
+      <div class="navbar-icon-box-active">
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <i class="fa fa-home"></i>
+        <% end %>
+      </div>
+
+    <% else %>
+
+      <div class="navbar-icon-box">
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <i class="fa fa-home"></i>
+        <% end %>
+      </div>
+
+    <% end %>
+
+    <% if current_page?(products_path) %>
+
+      <div class="navbar-icon-box-active">
+        <%= link_to products_path, class: "navbar-brand" do %>
+          <i class="fa fa-plus"></i>
+        <% end %>
+      </div>
+
+    <% else %>
+
+      <div class="navbar-icon-box">
+        <%= link_to products_path, class: "navbar-brand" do %>
+          <i class="fa fa-plus"></i>
+        <% end %>
+      </div>
+
+    <% end %>
+
+    <% if current_page?(favourites_path) %>
+
+      <div class="navbar-icon-box-active">
+        <%= link_to favourites_path ,class: "navbar-brand" do %>
+          <i class="fa fa-heart"></i>
+        <% end %>
+      </div>
+
+    <% else %>
+
+      <div class="navbar-icon-box">
+        <%= link_to favourites_path ,class: "navbar-brand" do %>
+          <i class="fa fa-heart"></i>
+        <% end %>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>
