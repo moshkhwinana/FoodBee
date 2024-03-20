@@ -1,10 +1,7 @@
-.fas {
-  margin-left: 5%;
-  margin-top: 2%;
-}
-
 .container-new {
-  padding: 50px;
+  // padding: 50px;
+  font-family: $app-font;
+  height: calc(100vh - 5rem);
 
   .card-whole {
     padding-top: 30px;
@@ -34,3 +31,6 @@
   }
 }
 
+#new-product-page-container {
+  height: calc(100vh - 5rem);
+}
