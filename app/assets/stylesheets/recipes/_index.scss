@@ -4,10 +4,16 @@ body.recipes.index {
   padding-top: 20px;
   backdrop-filter: blur(5px);
   font-family: $app-font;
+  font-size: large;
   height: 100vh;
 }
 .container {
   font-family: $app-font;
+
+  p {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
 
   .card {
     // width: 80%;
