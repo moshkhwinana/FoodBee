@@ -9,6 +9,11 @@ body.recipes.index {
 .container {
   font-family: $app-font;
 
+  p {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
   .card {
     // width: 80%;
     background: #fdf9f3;
@@ -16,8 +21,6 @@ body.recipes.index {
     border: 1px solid #eee;
     padding: 15px;
     margin-bottom: 15px;
-    margin-left: 24px;
-    margin-right: 24px;
     width: 88%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 

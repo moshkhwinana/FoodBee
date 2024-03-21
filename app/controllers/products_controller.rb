@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.order(created_at: :desc)
 
     if params[:query].present?
       @products = @products.where("product_name ILIKE ?", "%#{params[:query]}%")
