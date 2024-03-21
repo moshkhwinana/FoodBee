@@ -6,20 +6,20 @@
   font-family: $app-font;
 
   .header {
+    margin-top: 30px;
     font-weight: bold;
     font-size: 60px;
   }
 
-  .card-recipe {
+  .card-instructions {
     height: 50%;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(20px);
     order: 2;
     margin-top: 40px;
+    border-radius: 20px;
   }
 
 }
-
-
 
 body.recipes.show {
   // background-image: url('<%= cl_image_path @recipe.photo.key %>') fixed center;

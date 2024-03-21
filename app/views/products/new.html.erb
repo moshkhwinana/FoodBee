@@ -1,31 +1,9 @@
-<!--<div class="container">
-
-  <%#= link_to :back, class: 'text-dark justify-content-start' do %>-->
-<!--    <i class="fas fa-arrow-left"></i>-->
-  <%# end %>
-<!--
-  <div class='card-whole row justify-content-center'>
-    <h2 class='text-center'>Add a product</h2>
-
-    <div class='card-form d-flex justify-content-center'>
-      <%#= form_with model: @product do |f| %>-->
-<!--        <p><%#= f.label :product_name, class: 'label' %></p>
-        <p><%#= f.text_field :product_name, class: 'field' %></p>
-        <p><%#= f.label :description, class: 'label' %></p>
-        <p><%#= f.text_field :description, class: 'field' %></p>
-        <p><%#= f.submit :Add, class: 'btn' %></p>
-      <%# end %>-->
-<!--    </div>
-  </div>
-<div>-->
-
-<div class="container" id="new-product-page-container">
-
-  <%= link_to :back, class: 'text-dark justify-content-start' do %>
+<div class="container-new">
+  <%= link_to :back, class: 'text-light justify-content-start mx-3' do %>
     <i class="fas fa-arrow-left"></i>
   <% end %>
 
-  <div>
+  <div class="card-whole">
     <h2 class="text-center">Add a product</h2>
     <div class='card-form d-flex justify-content-center'>
       <%= form_with model: @product do |f| %>
@@ -37,7 +15,4 @@
       <% end %>
     </div>
   </div>
-
-
-
 </div>
