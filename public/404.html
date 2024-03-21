@@ -4,13 +4,21 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+
   .rails-default-error-page {
-    background-color: #EFEFEF;
+    background-color: whitesmoke;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
   }
+
+  .cont_principal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
   .rails-default-error-page div.dialog {
     width: 95%;
@@ -51,17 +59,25 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+
+
   </style>
 </head>
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+  <div class="mars"></div>
+  <img src="https://assets.codepen.io/1538474/404.svg" class="logo-404" />
+  <img src="https://assets.codepen.io/1538474/meteor.svg" class="meteor" />
+  <p class="title">Oh no!!</p>
+  <p class="subtitle">
+    You're either misspelling the URL <br /> or requesting a page that's no longer here.
+  </p>
+  <div align="center">
+    <a class="btn-back" href="/">Back to previous page</a>
   </div>
+  <img src="https://assets.codepen.io/1538474/astronaut.svg" class="astronaut" />
+  <img src="https://assets.codepen.io/1538474/spaceship.svg" class="spaceship" />
 </body>
 </html>
