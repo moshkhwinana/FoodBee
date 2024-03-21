@@ -3,9 +3,9 @@ require 'open-uri'
 class FavouritesController < ApplicationController
   def index
     if params[:query].present?
-      @favourites = Favourite.search_by_recipe_name(params[:query]).order
+      @favourites = Favourite.search_by_recipe_name(params[:query]).order(created_at: :desc)
     else
-      @favourites = current_user.favourites
+      @favourites = current_user.favourites.order(created_at: :desc)
     end
   end
 

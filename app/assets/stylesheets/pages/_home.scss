@@ -68,11 +68,13 @@ body.pages.home {
   justify-content: flex-end; // This pushes the content to the bottom
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100vh;
+  font-size: larger;
 }
 
 
 .container-homepage {
   font-family: $app-font;
+  font-size: larger;
 
   h1 {
     font-family: $app-font;
