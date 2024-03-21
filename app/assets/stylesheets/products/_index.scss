@@ -39,6 +39,8 @@ $yellow: #FFF76A;
   }
 
   .btn-product {
+    position: sticky;
+    bottom: 124px;
     margin: 15px 0;
     a {
       background-color: #FFF76A;
@@ -92,7 +94,7 @@ input[type=submit] {
 }
 
 .product-list {
-  height: 65vh;
+  height: 75vh;
   padding-left: 0;
   overflow: scroll;
 }
