@@ -11,11 +11,22 @@
   order: 2;
   margin-top: 40px;
   margin-left: 24px;
-  margin-bottom: 15px;;
+  margin-bottom: 15px;
+  font-size: 24px;
   // margin-left: ;
 
   .badge {
     background-color: white;
+  }
+}
+
+.favourite-card {
+  height: 143px !important;
+}
+
+.favourite-cards {
+  .card-recipe img {
+    height: 45px !important;
   }
 }
 
@@ -28,7 +39,7 @@
 }
 
 .card-recipe a {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
   text-decoration: none;
