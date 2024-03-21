@@ -9,13 +9,15 @@ $black: black;
   justify-content: space-between; // This pushes the content to the bottom
   font-family: 'Montserrat', sans-serif;
   line-height: 1.75;
+  position: relative;
 
   .row {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: end; // Center content horizontally
-
+    position: absolute;
+    top: 30%;
     h1 {
       margin: 0; // Remove default margins or adjust as necessary
       padding: 0.5rem 0; // Add some padding if needed
@@ -36,9 +38,12 @@ $black: black;
 
   .button-card {
     display: flex;
-    justify-content: space-between; // This will take effect if there's enough horizontal space
+    justify-content: space-between;
+    align-items: center; // This will take effect if there's enough horizontal space
     width: 100%; // Adjust this width as necessary
     padding: 0.5rem 0; // Add some padding for spacing
+    position: absolute;
+    bottom: 30%;
 
     .btn {
       margin: 0 5px; // Ensure buttons don't stick together
