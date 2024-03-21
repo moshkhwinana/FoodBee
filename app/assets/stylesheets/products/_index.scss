@@ -4,8 +4,14 @@ $yellow: #FFF76A;
   font-family: $app-font;
 
   .heading-div {
+    display: flex;
+    align-items: center;
     color: white;
-    // font-weight: bold;
+    gap: 10px;
+
+    h1 {
+      margin-bottom: 0;
+    }
   }
   .list-group-item {
     border-radius: 20px;
@@ -33,6 +39,7 @@ $yellow: #FFF76A;
   }
 
   .btn-product {
+    margin: 15px 0;
     a {
       background-color: #FFF76A;
       color: black;
@@ -62,8 +69,10 @@ body.products.index {
   backdrop-filter: blur(5px);
   background-size: contain;
   height: max-content;
-  margin: 20px auto;
+  // margin: 20px auto;
+  padding-top: 20px;
   font-family: $app-font;
+  min-height: 100vh;
 }
 
 .product-checkbox {
@@ -80,4 +89,19 @@ body.products.index {
 input[type=submit] {
   background-color: #FFF76A;
 
+}
+
+.product-list {
+  height: 65vh;
+  padding-left: 0;
+  overflow: scroll;
+}
+
+.container .btn.add-ingredient-btn {
+  background: transparent;
+}
+
+i.fa-circle-plus {
+  font-size: 32px;
+  color: #fed709;
 }
