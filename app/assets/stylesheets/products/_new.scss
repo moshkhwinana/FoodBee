@@ -1,13 +1,14 @@
 .container-new {
   // padding: 50px;
   font-family: $app-font;
+  font-size: large;
   height: calc(100vh - 5rem);
 
   .card-whole {
     color: white;
     padding-top: 30px;
     padding-bottom: 10px;
-    background: black;
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 20px;
     width: 350px;
     margin: auto;

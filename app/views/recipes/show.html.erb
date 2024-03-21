@@ -1,4 +1,4 @@
-<%= link_to favourites_path, class: 'text-light justify-content-start' do %>
+<%= link_to favourites_path, class: 'text-light justify-content-start m-3' do %>
   <i class=' fas fa-arrow-left'></i>
 <% end %>
 
@@ -10,7 +10,7 @@
 
   <h1 class='header'><%= @recipe.recipe_name %></h1>
 
-  <div class='card-recipe p-5'>
+  <div class='card-instructions p-5'>
     <span><i class='fa-solid fa-clock'></i> <%= @recipe.prep_time %></span> |
     <span><i class='fa-regular fa-clock'></i> <%= @recipe.cooking_time %></span> |
     <span><i class='fas fa-check'></i> <%= @recipe.level %></span>

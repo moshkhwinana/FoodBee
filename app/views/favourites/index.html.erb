@@ -1,9 +1,9 @@
-<%= link_to recipes_path, class: 'text-light justify-content-start' do %>
+<%= link_to recipes_path, class: 'text-light justify-content-start m-4' do %>
   <i class='fas fa-arrow-left'></i>
 <% end %>
 <div class="container my-1 align-items-center text-light">
   <h1 class='quote text-center'>Learn, Cook, & Eat your food</h1>
-  <%= link_to "Summon Kitchen Genius!", new_generate_recipes_path, class: "btn mb-2" %>
+  <%= link_to "Create another recipe", products_path, class: "btn mb-2" %>
   <div>
     <% if @favourites.empty? %>
       <h4>You have no favourites yet</h4>
