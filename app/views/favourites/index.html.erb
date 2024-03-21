@@ -2,9 +2,9 @@
   <i class='fas fa-arrow-left'></i>
 <% end %>
 <div class="container my-1 align-items-center text-light">
-  <h1 class='quote text-center'>Learn, Cook, & Eat your food</h1>
+  <h1 class='quote text-center'>Favourites</h1>
   <%= link_to "Create another recipe", products_path, class: "btn mb-2" %>
-  <div>
+  <div class="favourite-cards">
     <% if @favourites.empty? %>
       <h4>You have no favourites yet</h4>
     <% else %>
