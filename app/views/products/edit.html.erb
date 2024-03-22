@@ -4,10 +4,10 @@
   <% end %>
 
   <div class='card-whole'>
-    <h2 class='text-center'>Edit your ingredient</h2>
+    <h2 class='text-center mb-3'>Edit your ingredient</h2>
     <div class='card-form d-flex justify-content-center'>
       <p><%= form_with model: @product do |f| %></p>
-        <p><%= f.label :product_name, class: 'label' %></p>
+        <p><%= f.label :product_name, "Name", class: 'label' %></p>
         <p><%= f.text_field :product_name, class: 'field' %></p>
         <p><%= f.label :description, class: 'label' %></p>
         <p><%= f.text_field :description, class: 'field' %></p>
@@ -15,4 +15,3 @@
       <p><% end %></p>
     </div>
 </div>
-
