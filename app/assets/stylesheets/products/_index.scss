@@ -2,7 +2,7 @@ $yellow: #FFF76A;
 
 .container {
   font-family: $app-font;
-  font-size: 20px;
+  font-size: 26px;
 
   .heading-div {
     display: flex;
@@ -12,6 +12,7 @@ $yellow: #FFF76A;
 
     h1 {
       margin-bottom: 0;
+      font-size: 32px;
     }
   }
   .list-group-item {
@@ -36,6 +37,7 @@ $yellow: #FFF76A;
       color: rgb(173, 173, 173);
       text-decoration: none;
       opacity: 0.7;
+      font-size: 20px;
     }
   }
 
