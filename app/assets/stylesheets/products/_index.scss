@@ -2,7 +2,7 @@ $yellow: #FFF76A;
 
 .container {
   font-family: $app-font;
-  font-size: 26px;
+  font-size: 20px;
 
   .heading-div {
     display: flex;
@@ -18,13 +18,15 @@ $yellow: #FFF76A;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     background-color: #fdf9f3;
-    margin: 0;
+    margin: 8px 30px;
     border: 1px solid #eee;
-    padding: 15px;
+    padding: 28px;
     margin-bottom: 15px;
+    width: 90%;
+    padding-left: 38px;
 
     .description {
-      margin-left: 60px;
+      margin-left: 10px;
     }
   }
 
@@ -95,6 +97,7 @@ input[type=submit] {
   height: 75vh;
   padding-left: 0;
   overflow: scroll;
+  width: 100%;
 }
 
 .container .btn.add-ingredient-btn {

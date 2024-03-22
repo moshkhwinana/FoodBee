@@ -13,6 +13,7 @@ body.favourites.index {
 
   h1 {
     font-family: $app-font;
+    font-size: 38px;
   }
 
   h3 {
@@ -21,7 +22,7 @@ body.favourites.index {
   }
 
   .favourite-cards {
-    height: 63vh;
+    height: 70vh;
     overflow: scroll;
   }
 
