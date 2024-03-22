@@ -1,9 +1,9 @@
-<div class="card-recipe mt-4 extra-rounded favourite-card">
+<div class="card-recipe mt-3 extra-rounded">
   <%= image_tag "hot-dish.png", alt: "chef image" %>
   <div class="card-recipe-infos">
     <div class="card-recipe-right">
       <%= link_to favourite.recipe.recipe_name, recipe_path(favourite.recipe), id: 'bold-link' %>
-      <div class="badge rounded-pill text-dark bg-white mt-2"><em><i class="fa-regular fa-clock"></i> Prep time: <%= favourite.recipe.prep_time %></em></div>
+      <div class="rounded-pill text-dark mt-2"><em><i class="fa-regular fa-clock"></i> Prep time: <%= favourite.recipe.prep_time %></em></div>
     </div>
     <div class="card-recipe-left">
       <%= link_to favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-dark text-decoration-none' do %>

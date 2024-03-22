@@ -1,28 +1,24 @@
 .card-recipe {
   overflow: hidden;
-  background: white;
+  background-color: #fdf9f3;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   width: 100%;
+  height: 143px;
   font-size: large;
 
-  .badge {
-    background-color: white;
-    font-size: 16px;
+  img {
+    height: 45px;
+    width: 40px;
+    object-fit: cover;
+    margin-left: 12px;
+    border-radius: 12px;
   }
 }
 
-.card-recipe img {
-  height: 100%;
-  width: 40px;
-  object-fit: cover;
-  margin-left: 12px;
-  border-radius: 12px;
-}
-
 .card-recipe a {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   margin: 0;
   text-decoration: none;
@@ -47,11 +43,16 @@
   align-items: start;
 }
 
+.card-recipe-left {
+  display: flex;
+  align-items: center;
+}
+
 .card-recipe .card-recipe-infos {
   display: flex;
   justify-content: space-between;
   flex: 1;
-  padding: 16px;
+  padding: 12px;
 }
 
 .extra-rounded {

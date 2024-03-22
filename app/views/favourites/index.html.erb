@@ -10,15 +10,6 @@
     <% else %>
       <% @favourites.each do |favourite| %>
         <%= render 'favourites/partials/favourite-card', favourite: favourite %>
-        <!--<div class="card mt-4">-->
-            <%#= link_to favourite.recipe.recipe_name, recipe_path(favourite.recipe), class: 'bold-name text-decoration-none' %>
-<!--          <span style="font-size: 10px; color: #666;">
-            <i class="fa-regular fa-clock"></i> Prep Time: <%#= favourite.recipe.prep_time %>
-            <%#= link_to favourite_path(favourite), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-dark text-decoration-none' do %>-->
-<!--              <i class="fa-solid fa-trash-can mx-auto"></i>-->
-            <%# end %>
-<!--          </span>
-        </div>-->
       <% end %>
     <% end %>
   </div>

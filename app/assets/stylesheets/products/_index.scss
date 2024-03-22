@@ -19,20 +19,19 @@ $yellow: #FFF76A;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     background-color: #fdf9f3;
-    margin: 8px 30px;
-    border: 1px solid #eee;
-    padding: 28px;
-    margin-bottom: 15px;
-    width: 90%;
-    padding-left: 38px;
+    padding: 25px 22px;
+    width: 100%;
     scroll-snap-align: center;
 
-    .description {
-      margin-left: 10px;
+    a {
+      text-decoration: none;
     }
   }
 
   .btns {
+    margin-left: auto;
+    align-items: center;
+    gap: 18px;
     a {
       color: rgb(173, 173, 173);
       text-decoration: none;
@@ -62,7 +61,7 @@ $yellow: #FFF76A;
     }
   }
 
-  .name img {
+  img.circle-img {
     border-radius: 100%;
     width: 20%;
   }
@@ -83,12 +82,21 @@ body.products.index {
   padding-top: 20px;
   top: .8rem;
   scale: 1.4;
-  margin-right: 0.7rem;
+  // margin-right: 0.7rem;
 }
 
 .product-name {
-  // font-size: 1em;
-  font-size: 26px;
+  font-size: 22px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-muted {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 170px;
 }
 
 input[type=submit] {
@@ -101,6 +109,8 @@ input[type=submit] {
   padding-left: 0;
   overflow: scroll;
   width: 100%;
+  align-items: center;
+  padding: 0 8px;
 }
 
 .container .btn.add-ingredient-btn {
@@ -110,4 +120,24 @@ input[type=submit] {
 i.fa-circle-plus {
   font-size: 32px;
   color: #fed709;
+}
+
+.card-product {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+
+  .card-product-top-row {
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    a {
+      margin-right: 2px;
+    }
+  }
+
+  .card-product-infos {
+    flex-grow: 1;
+  }
 }

@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @back_path = request.referer ? :back : favourites_path
     @recipe = Recipe.find(params[:id])
   end
 
@@ -21,7 +22,7 @@ class RecipesController < ApplicationController
   end
 
   def generate
-    product_ids = Array.wrap(params[:product_ids]).reject(&:blank?) 
+    product_ids = Array.wrap(params[:product_ids]).reject(&:blank?)
     products = Product.where(id: product_ids)
     RecipeGenerator.new(products).generate
     redirect_to recipes_path, notice: "Recipes generated successfully."
