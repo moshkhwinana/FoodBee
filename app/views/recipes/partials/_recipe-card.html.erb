@@ -6,7 +6,7 @@
       <div class="rounded-pill text-dark mt-2"><i class="fa-regular fa-clock"></i> Prep time: <%= recipe.prep_time %></div>
     </div>
     <div class="card-recipe-left">
-      <%= link_to recipe_favourites_path(recipe), class: "favourite-button", data: {turbo_method: :post} do %>
+      <%= link_to recipe_favourites_path(recipe), class: "favourite-button", data: {turbo_method: :post, controller: 'favourites'  ,action: 'click->favourites#toggle'} do %>
         <i class='fa-solid fa-heart mx-auto'></i>
       <% end %>
     </div>

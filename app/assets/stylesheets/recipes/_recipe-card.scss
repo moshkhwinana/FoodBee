@@ -42,6 +42,12 @@
 .card-recipe-left {
   display: flex;
   align-items: center;
+
+  .favourited {
+    i {
+      color: #FFD60A;
+    }
+  }
 }
 
 .card-recipe .card-recipe-infos {

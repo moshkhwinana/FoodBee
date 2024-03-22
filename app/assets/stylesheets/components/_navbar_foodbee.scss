@@ -49,7 +49,12 @@
     display: inline-block;
     margin: 0;
     font-size: 25px;
-    color: black;
+    color: #FFD60A;
+
+    &:focus,
+    &:hover {
+      color: #FFD60A;
+    }
   }
 }
 
