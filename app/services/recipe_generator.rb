@@ -1,19 +1,17 @@
 class RecipeGenerator
-
   attr_reader :client, :recipe, :products, :ingredients, :recipes
 
   def initialize(products)
     @recipe = Recipe.new
-    @products = products # Array of product instances
+    @products = products
     @ingredients = @products.map(&:product_name)
     @recipes = []
     @client = get_client
   end
 
   def generate
-    # Initialize OpenAI Client with GPT-4 (ensure you've configured your OpenAI API key)
     chatgpt_response = @client.chat(parameters: {
-      model: "gpt-3.5-turbo", # Remember to update this to the GPT-4 model ID when available
+      model: "gpt-3.5-turbo",
       messages: [{
         role: 'user',
         content: <<-CONTENT
@@ -64,9 +62,7 @@ class RecipeGenerator
 
   def get_and_save_image_on_recipe(recipe)
     url = generate_image_for_recipe(recipe.recipe_name)
-    # recipe.update(image_url: url)
     puts "the image url is #{url}"
-    # recipe
     url
   end
 
@@ -93,16 +89,6 @@ class RecipeGenerator
 
 
       recipe = Recipe.create!(recipe_attributes)
-      # recipe.image_url = generate_image_for_recipe(recipe.recipe_name)
-      # url = get_and_save_image_on_recipe(recipe)
-      # puts "the image url is now #{url}"
-      # recipe.update!(image_url: url)
-
-      # create a recipeingredient record for each product
-      # @products.each do |product|
-      #   recipe.products << product
-      # end
-
       recipe
     end
   end

@@ -3,10 +3,9 @@ $cream: #F9FBF2;
 $black: black;
 
 #homepage {
-  height: calc(100vh - 5rem); // This makes sure the container fills the entire height of the viewport
+  height: calc(100vh - 5rem);
   display: flex;
-  // flex-direction: column;
-  justify-content: space-between; // This pushes the content to the bottom
+  justify-content: space-between;
   font-family: 'Montserrat', sans-serif;
   line-height: 1.75;
   position: relative;
@@ -17,23 +16,22 @@ $black: black;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: end; // Center content horizontally
+    align-items: end;
     position: absolute;
     top: 30%;
     h1 {
-      margin: 0; // Remove default margins or adjust as necessary
-      padding: 0.5rem 0; // Add some padding if needed
+      margin: 0;
+      padding: 0.5rem 0;
       text-align: center;
-      font-size: 4rem; // Example for a large, attention-grabbing heading
+      font-size: 4rem;
       font-weight: 700;
-      // text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 0px -4px 10px rgba(255,255,255,0.3);
     }
 
     h3 {
-      margin: 0; // Remove default margins or adjust as necessary
-      padding: 0.5rem 0; // Add some padding if needed
+      margin: 0;
+      padding: 0.5rem 0;
       text-align: center;
-      font-size: 1.5rem; // Example for a large, attention-grabbing heading
+      font-size: 1.5rem;
       font-weight: 400;
     }
   }
@@ -41,26 +39,26 @@ $black: black;
   .button-card {
     display: flex;
     justify-content: space-between;
-    align-items: center; // This will take effect if there's enough horizontal space
-    width: 100%; // Adjust this width as necessary
-    padding: 0.5rem 0; // Add some padding for spacing
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 0;
     position: absolute;
     bottom: 30%;
     font-size: larger;
 
     .btn {
-      margin: 0 5px; // Ensure buttons don't stick together
+      margin: 0 5px;
       background-color: #FFD60A;
       text-transform: uppercase;
       padding: 10px 20px;
       font-weight: bold;
       color: #333;
       border-radius: 15px;
-      transition: background-color 0.3s, transform 0.2s; // Smooth transitions
+      transition: background-color 0.3s, transform 0.2s;
 
       &:hover {
-        background-color: #fbc02d; // Slightly lighter yellow on hover
-        transform: translateY(-2px); // Slight lift effect
+        background-color: #fbc02d;
+        transform: translateY(-2px);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
       }
     }
@@ -71,7 +69,7 @@ body.pages.home {
   font-family: 'Antonio';
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0)), url('https://images.unsplash.com/photo-1619674072044-da7ecf3b17cd?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') fixed center;  background-size: cover;
   color: $cream;
-  justify-content: flex-end; // This pushes the content to the bottom
+  justify-content: flex-end;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100vh;
   font-size: larger;
@@ -91,7 +89,6 @@ body.pages.home {
   }
 
   .card {
-    // width: 80%;
     background: #fdf9f3;
     border-radius: 20px;
     margin: 0;
@@ -100,11 +97,6 @@ body.pages.home {
     margin-bottom: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
-    // .favourite-button {
-    //   position: absolute;
-    //   top: 5px;
-    //   right: 2px;
-    // }
     #bold-link {
       font-weight: bold;
     }
