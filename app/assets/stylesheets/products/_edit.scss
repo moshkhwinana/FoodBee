@@ -40,4 +40,8 @@ body.products.edit {
   background-size: contain;
   height: max-content;
   font-family: $app-font;
+
+  .container-edit .card-whole .btn {
+    margin-left: 0;
+  }
 }
