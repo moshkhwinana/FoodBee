@@ -4,7 +4,7 @@
 <div class="container my-3 align-items-center text-light">
   <h1 class='quote text-center'>Saved Recipes</h1>
   <%= link_to "Create another recipe", products_path, class: "btn mb-2" %>
-  <div>
+  <div class="favourite-cards">
     <% if @favourites.empty? %>
       <h4>You have no favourites yet</h4>
     <% else %>

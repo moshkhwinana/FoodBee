@@ -2,6 +2,7 @@ $yellow: #FFF76A;
 
 .container {
   font-family: $app-font;
+  font-size: 20px;
 
   .heading-div {
     display: flex;
@@ -17,18 +18,17 @@ $yellow: #FFF76A;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     background-color: #fdf9f3;
-    margin: 0;
+    margin: 8px 30px;
     border: 1px solid #eee;
-    padding: 15px;
+    padding: 28px;
     margin-bottom: 15px;
+    width: 90%;
+    padding-left: 38px;
 
     .description {
       margin-left: 10px;
     }
   }
-  // margin-bottom: 15px;
-  // box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
 
   .btns {
     a {
@@ -71,7 +71,6 @@ body.products.index {
   backdrop-filter: blur(5px);
   background-size: contain;
   height: max-content;
-  // margin: 20px auto;
   padding-top: 20px;
   font-family: $app-font;
   min-height: 100vh;
@@ -85,9 +84,10 @@ body.products.index {
 }
 
 .product-name {
-  font-size: 1em;  /* Increase font size by 1.2 times */
+  // font-size: 1em;
+  font-size: 26px;
 }
-// background-color: rgb(231, 231, 231);
+
 input[type=submit] {
   background-color: #FFF76A;
 
@@ -97,6 +97,7 @@ input[type=submit] {
   height: 75vh;
   padding-left: 0;
   overflow: scroll;
+  width: 100%;
 }
 
 .container .btn.add-ingredient-btn {

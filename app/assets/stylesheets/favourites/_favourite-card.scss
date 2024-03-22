@@ -13,6 +13,16 @@
   }
 }
 
+.favourite-card {
+  height: 143px !important;
+}
+
+.favourite-cards {
+  .card-recipe img {
+    height: 45px !important;
+  }
+}
+
 .card-recipe img {
   height: 100%;
   width: 40px;

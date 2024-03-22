@@ -6,6 +6,7 @@ body.favourites.index {
   backdrop-filter: blur(5px);
   font-family: $app-font;
   height: 100vh;
+  font-size: large;
 }
 .container {
   font-family: $app-font;
@@ -18,6 +19,11 @@ body.favourites.index {
   h3 {
     font-family: $app-font;
     font-weight: lighter;
+  }
+
+  .favourite-cards {
+    height: 63vh;
+    overflow: scroll;
   }
 
   .card {
