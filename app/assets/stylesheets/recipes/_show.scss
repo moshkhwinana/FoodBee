@@ -14,6 +14,12 @@
     margin-top: 24px;
   }
 
+  .full-width-placeholder {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
 
   .header {
     margin-top: 30px;
@@ -48,6 +54,7 @@ body.recipes.show {
   background-size: cover;
   background-position: center bottom 150px;
   height: max-content;
+  padding-top: 20px;
   font-family: $app-font;
   background-color: rgb(26, 26, 26);
 }
