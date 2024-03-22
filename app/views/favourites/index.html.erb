@@ -1,8 +1,8 @@
 <%= link_to recipes_path, class: 'text-light justify-content-start m-4' do %>
   <i class='fas fa-arrow-left'></i>
 <% end %>
-<div class="container my-1 align-items-center text-light">
-  <h1 class='quote text-center'>Favourites</h1>
+<div class="container my-3 align-items-center text-light">
+  <h1 class='quote text-center'>Saved Recipes</h1>
   <%= link_to "Create another recipe", products_path, class: "btn mb-2" %>
   <div class="favourite-cards">
     <% if @favourites.empty? %>
